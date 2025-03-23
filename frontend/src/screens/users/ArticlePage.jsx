@@ -38,7 +38,7 @@ const ArticlePage = () => {
           )}
           <h2 className="title">{article.DESIGN ?? "-"}</h2>
           <div className="stock-info-container">
-            <div className="stock-card">
+            <div className="stock-card-info">
               <h3>Stock :</h3>
               <span
                 className={
@@ -48,7 +48,7 @@ const ArticlePage = () => {
                 {article.STOCK === 0 ? "RUPTURE" : `${article.STOCK}`}
               </span>
             </div>
-            <div className="stock-card">
+            <div className="stock-card-info">
               <h3>En commande :</h3>
               <span
                 className={
@@ -79,9 +79,9 @@ const ArticlePage = () => {
             <div className="stock-container">
               <StockCard item={{ gissement: "Magasin", stock: article.S1 }} />
               <StockCard item={{ gissement: "Dock", stock: article.S2 }} />
-              <StockCard item={{ gissement: "Reserve", stock: article.S3 }} />
-              <StockCard item={{ gissement: "Stock 4", stock: article.S4 }} />
-              <StockCard item={{ gissement: "Stock 5", stock: article.S5 }} />
+              <StockCard item={{ gissement: "Bureau", stock: article.S3 }} />
+              <StockCard item={{ gissement: "SCEB", stock: article.S4 }} />
+              <StockCard item={{ gissement: "Mecalac", stock: article.S5 }} />
             </div>
 
             <div className="field-row">

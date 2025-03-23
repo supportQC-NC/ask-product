@@ -27,7 +27,8 @@
 }
 .nart {
   font-size: 24px;
-  color: #333;
+  color: #2c2d6b;
+  font-weight: bolder;
 }
 .barcode-container {
   margin: 20px 0;
@@ -60,11 +61,53 @@
   color: green;
 }
 
+.stock-info-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.stock-card-info {
+  background-color: #e7e7e7;
+  border: 1px solid;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease;
+  width: 100%;
+}
+.stock-card-info span {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
 /* Médias queries pour les tablettes et les desktops */
 @media (min-width: 768px) {
   .stock-container {
     flex-direction: row; /* Rétablit l'orientation horizontale pour les écrans plus grands */
     justify-content: space-between; /* Répartit les éléments uniformément sur la ligne */
+  }
+
+  .stock-card-info {
+    background-color: #e7e7e7;
+    border: 1px solid;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease;
+    width: 100%;
+  }
+  .stock-card-info span {
+    font-size: 1.8rem;
+    font-weight: bold;
   }
 }
 

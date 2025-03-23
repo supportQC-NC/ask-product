@@ -13,7 +13,6 @@ import articleRoutes from "./routes/articleRoutes.js";
 // Importation des fichiers de routes
 import userRoutes from "./routes/userRoutes.js";
 
-
 // Configuration des variables d'environnement
 dotenv.config();
 
@@ -46,7 +45,6 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // Configuration CORS
 const allowedOrigins = [
   "http://localhost:3000",
-  "http://localhost:192.168.178.21:3000",
 
   "https://robot-nc.com",
   "https://api.robot-nc.com",
@@ -81,8 +79,6 @@ app.get("/", (req, res) => {
 // Montage des routes
 app.use("/users", userRoutes);
 app.use("/api/articles", articleRoutes);
-
-
 
 // Middleware pour vérifier l'autorisation et déboguer
 app.use((req, res, next) => {
