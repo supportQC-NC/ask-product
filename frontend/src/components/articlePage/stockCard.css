@@ -1,0 +1,48 @@
+/* StockCard.css */
+.stock-card {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 10px;
+  transition: box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.stock-card h2 {
+  color: #333333;
+  font-size: 20px; /* Taille réduite pour les écrans mobiles */
+  margin-bottom: 8px;
+}
+
+.stock-card p {
+  color: #666666;
+  font-size: 16px; /* Taille réduite pour les écrans mobiles */
+}
+
+.stock-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Médias queries pour les tablettes et les desktops */
+@media (min-width: 768px) {
+  .stock-card {
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .stock-card h2 {
+    font-size: 24px; /* Taille augmentée pour les écrans plus larges */
+    margin-bottom: 10px;
+  }
+
+  .stock-card p {
+    font-size: 18px; /* Taille augmentée pour les écrans plus larges */
+  }
+
+  .stock-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+}

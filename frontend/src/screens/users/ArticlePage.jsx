@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Barcode from "react-barcode";
 import "./articlePage.css"; // <-- Import de votre fichier CSS
+import StockCard from "../../components/articlePage/StockCard";
 
 const ArticlePage = () => {
   const { gencode } = useParams();
@@ -22,56 +24,82 @@ const ArticlePage = () => {
     }
   }, [gencode]);
 
-  // Fonction pour revenir à la page d'accueil (rescan)
   const handleRescan = () => {
     navigate("/");
   };
 
-  // Liste de champs à afficher
-  const fields = [
-    { key: "NART", label: "NART" },
-    { key: "DESIGN", label: "Désignation" },
-    { key: "GISM1", label: "Gissement" },
-    { key: "GENCOD", label: "Gencode" },
-    { key: "FOURN", label: "Fourn." },
-    { key: "STOCK", label: "Stock" },
-    { key: "S1", label: "Stock Magasin" },
-    { key: "S2", label: "Stock Dock" },
-    { key: "S3", label: "Stock 3" },
-    { key: "S4", label: "Stock 4" },
-    { key: "S5", label: "Stock 5" },
-    { key: "ENCDE", label: "En commande" },
-    { key: "ATVA", label: "Taux TGC" },
-    { key: "PVTETTC", label: "Prix TTC" },
-    { key: "DEPREC", label: "Dépréciation" },
-    // Ajoutez d'autres champs si nécessaire
-  ];
-
   return (
     <div className="article-page">
-      <h2 className="title">Fiche Article</h2>
-
-      {error && <p className="error">{error}</p>}
-
-      {article && (
-        <div className="article-info">
-          {/* 
-            Vérifie si DEPREC n'est pas 0. 
-            Si c'est différent de 0, on affiche le message rouge en haut.
-          */}
+      {/* Vérifiez d'abord si article existe avant de tenter d'accéder à ses propriétés */}
+      {article ? (
+        <>
           {article.DEPREC !== 0 && (
             <p className="deprec-warning">Produit déprécié</p>
           )}
-
-          {/* Affiche la liste de champs */}
-          {fields.map((f) => (
-            <div key={f.key} className="field-row">
-              <span className="field-label">{f.label} :</span>
-              <span className="field-value">{article[f.key] ?? "-"}</span>
+          <h2 className="title">{article.DESIGN ?? "-"}</h2>
+          <div className="stock-info-container">
+            <div className="stock-card">
+              <h3>Stock :</h3>
+              <span
+                className={
+                  article.STOCK === 0 ? "stock-rupture" : "stock-available"
+                }
+              >
+                {article.STOCK === 0 ? "RUPTURE" : `${article.STOCK}`}
+              </span>
             </div>
-          ))}
-        </div>
+            <div className="stock-card">
+              <h3>En commande :</h3>
+              <span
+                className={
+                  article.ENCDE === 0 ? "stock-rupture" : "stock-available"
+                }
+              >
+                {article.ENCDE === 0 ? "0" : `${article.ENCDE}`}
+              </span>
+            </div>
+          </div>
+
+          <div className="article-info">
+            <div className="article-header">
+              <div className="barcode-container">
+                <Barcode value={article.GENCOD ?? ""} format="CODE128" />
+              </div>
+              <div className="nart-container">
+                <span className="nart-label">NART :</span>
+                <span className="nart">{article.NART ?? "-"}</span>
+              </div>
+            </div>
+
+            <div className="field-row">
+              <span className="field-label">Gissement :</span>
+              <span className="field-value">{article.GISM1 ?? "-"}</span>
+            </div>
+
+            <div className="stock-container">
+              <StockCard item={{ gissement: "Magasin", stock: article.S1 }} />
+              <StockCard item={{ gissement: "Dock", stock: article.S2 }} />
+              <StockCard item={{ gissement: "Reserve", stock: article.S3 }} />
+              <StockCard item={{ gissement: "Stock 4", stock: article.S4 }} />
+              <StockCard item={{ gissement: "Stock 5", stock: article.S5 }} />
+            </div>
+
+            <div className="field-row">
+              <span className="field-label">Taux TGC :</span>
+              <span className="field-value">{article.ATVA ?? "-"}%</span>
+            </div>
+
+            <div className="field-row">
+              <span className="field-label">Prix TTC :</span>
+              <span className="field-value">{article.PVTETTC ?? "-"} XPF</span>
+            </div>
+          </div>
+        </>
+      ) : (
+        <p>Chargement des données de l'article ou article non trouvé...</p>
       )}
+
+      {error && <p className="error">{error}</p>}
 
       <button onClick={handleRescan} className="rescan-button">
         Re-scanner un article

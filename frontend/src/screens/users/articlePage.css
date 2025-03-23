@@ -1,109 +1,120 @@
-/* ====== GLOBAL / RESET ====== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* ====== PAGE CONTAINER ====== */
+/* Style général de la page */
 .article-page {
-  max-width: 600px; /* Largeur max sur grands écrans */
-  margin: 0 auto; /* Centre la page sur écran large */
-  padding: 1rem; /* Espacement interne */
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  min-height: 100vh;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* ====== TITRE PRINCIPAL ====== */
 .title {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  font-weight: bold;
   text-align: center;
   color: #333;
+  margin-bottom: 20px;
 }
-
-/* ====== ERREUR ====== */
+.article-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.nart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.nart {
+  font-size: 24px;
+  color: #333;
+}
+.barcode-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
 .error {
-  color: #c0392b;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  color: #b00020;
+  font-size: 16px;
+  margin: 10px 0;
   text-align: center;
 }
+/* Base mobile-first styles */
+.stock-container {
+  display: flex;
+  flex-direction: column; /* Empile les éléments verticalement sur les petits écrans */
+  align-items: center; /* Centre les éléments verticalement */
+  margin-bottom: 20px;
+}
 
-/* ====== SECTION ARTICLE ====== */
+.stock-quantity {
+  font-weight: bold;
+}
+
+.stock-rupture {
+  color: red;
+}
+
+.stock-available {
+  color: green;
+}
+
+/* Médias queries pour les tablettes et les desktops */
+@media (min-width: 768px) {
+  .stock-container {
+    flex-direction: row; /* Rétablit l'orientation horizontale pour les écrans plus grands */
+    justify-content: space-between; /* Répartit les éléments uniformément sur la ligne */
+  }
+}
+
+.deprec-warning {
+  color: #b00020;
+  background-color: #ffcdd2;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .article-info {
   background-color: #ffffff;
-  border-radius: 4px;
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.info-title {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #555;
-}
-
-/* ====== LIGNE DE CHAMP ====== */
 .field-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
-  border-bottom: 1px solid #efefef;
-  padding-bottom: 0.25rem;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #eeeeee;
 }
 
 .field-label {
   font-weight: bold;
-  color: #666;
-  margin-right: 0.5rem;
+  color: #555;
 }
 
 .field-value {
-  color: #333;
-  text-align: right;
-  flex: 1;
+  color: #666;
 }
 
-.deprec-warning {
-  color: red;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-
-/* ====== BOUTON RE-SCANNER ====== */
 .rescan-button {
   display: block;
-  margin: 1.5rem auto 0 auto;
-  padding: 0.75rem 1.25rem;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
   border: none;
-  border-radius: 4px;
-  background-color: #006eff;
-  color: #fff;
-  font-size: 1rem;
+  border-radius: 5px;
   cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
 }
 
 .rescan-button:hover {
-  background-color: #0052c2;
-}
-
-/* ====== RESPONSIVE (optionnel) ====== */
-/* Pour les écrans plus larges, on peut affiner la présentation */
-@media screen and (min-width: 768px) {
-  .article-info {
-    padding: 2rem;
-  }
-
-  .field-row {
-    margin-bottom: 1rem;
-  }
-
-  .rescan-button {
-    font-size: 1.1rem;
-    padding: 1rem 1.5rem;
-  }
+  background-color: #45a049;
 }
