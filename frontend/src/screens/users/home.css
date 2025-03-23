@@ -1,0 +1,82 @@
+/* ====== RESET GÉNÉRAL ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ====== CONTENEUR PRINCIPAL ====== */
+.home-container {
+  max-width: 600px; /* Limite la largeur sur grands écrans */
+  margin: 0 auto; /* Centre la zone sur les écrans plus grands */
+  padding: 1rem;
+  min-height: 100vh; /* Pour occuper l’écran verticalement */
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centre verticalement le contenu */
+  align-items: center; /* Centre horizontalement le contenu */
+  font-family: Arial, sans-serif;
+}
+
+/* ====== TITRE ====== */
+.home-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* ====== ZONE DE RECHERCHE ====== */
+.search-box {
+  display: flex;
+  flex-direction: column; /* Sur mobile, on empile input + bouton */
+  width: 100%;
+  max-width: 400px; /* Pour ne pas trop étirer l’input sur grands écrans */
+}
+
+/* ====== CHAMP DE SAISIE ====== */
+.search-input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  margin-bottom: 1rem; /* Espace sous l’input pour le bouton */
+}
+
+/* Change de couleur quand l’input est focus */
+.search-input:focus {
+  border-color: #006eff;
+}
+
+/* ====== BOUTON ====== */
+.search-button {
+  padding: 0.75rem 1rem;
+  background-color: #006eff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Hover : on assombrit un peu le bouton */
+.search-button:hover {
+  background-color: #0052c2;
+}
+
+/* ====== RESPONSIVE : pour les écrans >= 768px ====== */
+@media (min-width: 768px) {
+  /* On place l’input et le bouton sur une même ligne s’il y a la place */
+  .search-box {
+    flex-direction: row;
+    gap: 0.5rem; /* petit espace entre input et bouton */
+  }
+
+  .search-input {
+    margin-bottom: 0; /* plus de marge si on est en ligne */
+    flex: 1;
+  }
+}

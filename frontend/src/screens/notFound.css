@@ -1,0 +1,73 @@
+/* ------------------------------------------
+   NotFound.css - Page 404 mobile-first
+-------------------------------------------*/
+
+/* Conteneur principal : plein écran, centré */
+.notfound-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 1.5rem;
+
+  /* Dégradé en arrière-plan */
+  background: linear-gradient(to right, #3b82f6, #9333ea, #6366f1);
+  color: #ffffff; /* texte blanc par défaut */
+}
+
+/* Image (si vous en avez une) */
+.notfound-image {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+/* Titre principal */
+.notfound-title {
+  font-size: 1.5rem; /* suffisamment grand pour mobile */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+/* Texte explicatif */
+.notfound-text {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  max-width: 400px; /* pour éviter les lignes trop longues */
+}
+
+/* Lien de retour à l'accueil */
+.notfound-link {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background-color: #ffffff;
+  color: #3b82f6;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.notfound-link:hover {
+  background-color: #f0f0f0; /* léger feedback */
+}
+
+/* ------------------------------------------
+     Media Query pour écrans >= 768px (tablettes)
+  -------------------------------------------*/
+@media (min-width: 768px) {
+  .notfound-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .notfound-text {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+}
