@@ -120,7 +120,7 @@ const ArticlePage = () => {
               <div className="field-row">
                 <span className="field-label ancien-prix">Ancien Prix :</span>
                 <span className="field-value ancien-prix">
-                  {article.PVTETTC ?? "-"} XPF
+                  {article.PVTETTC ? Math.round(article.PVTETTC) : "-"} XPF
                 </span>
               </div>
             )}
