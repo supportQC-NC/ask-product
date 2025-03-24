@@ -1,40 +1,35 @@
 /* Style général de la page */
 .article-page {
   font-family: Arial, sans-serif;
-  margin: 0px;
-  padding: 8px;
-  background-color: #f5f5f5;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
 }
 
+/* Conteneur qui intègre l'image de fond pour la partie principale de l'article */
+.photo {
+  height: 300px;
+}
+/* Les styles existants */
 .title {
   text-align: center;
   color: #333;
   margin-bottom: 20px;
-  font-size: 17px;
 }
 .article-header {
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
 }
 .nart-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 .nart {
   font-size: 24px;
-  color: #2c2d6b;
-  font-weight: bolder;
-}
-.barcode-container {
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
+  color: #333;
 }
 .error {
   color: #b00020;
@@ -42,96 +37,27 @@
   margin: 10px 0;
   text-align: center;
 }
-/* Base mobile-first styles */
-.stock-container {
+.stock-info-container {
   display: flex;
-  flex-direction: column; /* Empile les éléments verticalement sur les petits écrans */
-  align-items: center; /* Centre les éléments verticalement */
-  margin-bottom: 20px;
-  font-size: 15px;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
 }
-
-.stock-quantity {
-  font-weight: bold;
+.stock-card-info h3 {
+  margin: 0;
 }
-
 .stock-rupture {
   color: red;
 }
-
 .stock-available {
   color: green;
 }
-
-.stock-info-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.stock-card-info {
-  background-color: #e7e7e7;
-  border: 1px solid;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 5px;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: box-shadow 0.3s ease;
-  width: 100%;
-  font-size: 10px;
-  text-align: center;
-}
-.stock-card-info span {
-  font-size: 19px;
-  font-weight: bold;
-  margin-top: 1rem;
-  text-align: center;
-}
-
-/* Médias queries pour les tablettes et les desktops */
-@media (min-width: 768px) {
-  .stock-container {
-    flex-direction: row; /* Rétablit l'orientation horizontale pour les écrans plus grands */
-    justify-content: space-between; /* Répartit les éléments uniformément sur la ligne */
-  }
-
-  .stock-card-info {
-    background-color: #e7e7e7;
-    border: 1px solid;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    margin: 10px;
-    display: flex;
-    justify-content: space-between;
-    transition: box-shadow 0.3s ease;
-    width: 100%;
-  }
-  .stock-card-info span {
-    font-size: 1.8rem;
-    font-weight: bold;
-  }
-}
-
-.deprec-warning {
-  color: #b00020;
-  background-color: #ffcdd2;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
 .article-info {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 .field-row {
   display: flex;
   justify-content: space-between;
@@ -139,16 +65,13 @@
   padding: 10px;
   border-bottom: 1px solid #eeeeee;
 }
-
 .field-label {
   font-weight: bold;
   color: #555;
 }
-
 .field-value {
   color: #666;
 }
-
 .rescan-button {
   display: block;
   width: 100%;
@@ -162,21 +85,28 @@
   margin-top: 20px;
   transition: background-color 0.3s ease;
 }
-
 .rescan-button:hover {
   background-color: #45a049;
 }
 
-/* Styles ajoutés pour la promotion */
-.promo-active {
-  color: green;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 15px;
-  font-size: 16px;
+/* Responsive stock container */
+.stock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
-
-.ancien-prix {
-  text-decoration: line-through;
-  color: #999;
+@media (min-width: 768px) {
+  .stock-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.deprec-warning {
+  color: #b00020;
+  background-color: #ffcdd2;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px;
 }

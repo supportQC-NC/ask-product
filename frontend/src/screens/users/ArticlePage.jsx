@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Barcode from "react-barcode";
 import "./articlePage.css";
 import StockCard from "../../components/articlePage/StockCard";
 
@@ -45,6 +44,17 @@ const ArticlePage = () => {
 
   return (
     <div className="article-page">
+      {/* Image de l'article, basée sur NART ou une image par défaut */}
+      <img
+        className="photo"
+        src={
+          article && article.NART
+            ? `/photos/${article.NART}.jpg`
+            : "/photos/no_photo.png"
+        }
+        alt={article ? article.DESIGN : "Pas de photo"}
+      />
+
       {article ? (
         <>
           {article.DEPREC !== 0 && (
