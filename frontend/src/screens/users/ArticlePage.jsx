@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Barcode from "react-barcode";
 import "./articlePage.css";
@@ -25,12 +25,27 @@ const ArticlePage = () => {
 
   const handleRescan = () => navigate("/");
 
+  const isPromotionActive = (start, end) => {
+    if (!start || !end) return false;
+    const today = new Date().setHours(0, 0, 0, 0);
+    const promoStart = new Date(start).setHours(0, 0, 0, 0);
+    const promoEnd = new Date(end).setHours(23, 59, 59, 999);
+    return today >= promoStart && today <= promoEnd;
+  };
+
   return (
     <div className="article-page">
       {article ? (
         <>
           {article.DEPREC !== 0 && (
             <p className="deprec-warning">Produit déprécié</p>
+          )}
+
+          {isPromotionActive(article.DPROMOD, article.DPROMOF) && (
+            <p className="promo-active">
+              EN PROMOTION jusqu'au{" "}
+              {new Date(article.DPROMOF).toLocaleDateString()}
+            </p>
           )}
 
           <h2 className="title">{article.DESIGN ?? "-"}</h2>
@@ -60,9 +75,6 @@ const ArticlePage = () => {
 
           <div className="article-info">
             <div className="article-header">
-              {/* <div className="barcode-container">
-                <Barcode value={article.GENCOD ?? ""} format="CODE128" />
-              </div> */}
               <div className="nart-container">
                 <span className="nart">{article.NART ?? "-"}</span>
               </div>
@@ -88,8 +100,21 @@ const ArticlePage = () => {
 
             <div className="field-row">
               <span className="field-label">Prix TTC :</span>
-              <span className="field-value">{article.PVTETTC ?? "-"} XPF</span>
+              <span className="field-value">
+                {isPromotionActive(article.DPROMOD, article.DPROMOF)
+                  ? `${article.PVPROMO ?? "-"} XPF`
+                  : `${article.PVTETTC ?? "-"} XPF`}
+              </span>
             </div>
+
+            {isPromotionActive(article.DPROMOD, article.DPROMOF) && (
+              <div className="field-row">
+                <span className="field-label ancien-prix">Ancien Prix :</span>
+                <span className="field-value ancien-prix">
+                  {article.PVTETTC ?? "-"} XPF
+                </span>
+              </div>
+            )}
           </div>
         </>
       ) : (

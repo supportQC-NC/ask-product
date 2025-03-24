@@ -23,7 +23,6 @@
 }
 .nart-container {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
 }
@@ -166,4 +165,18 @@
 
 .rescan-button:hover {
   background-color: #45a049;
+}
+
+/* Styles ajoutés pour la promotion */
+.promo-active {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.ancien-prix {
+  text-decoration: line-through;
+  color: #999;
 }

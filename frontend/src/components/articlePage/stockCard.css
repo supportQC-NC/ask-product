@@ -4,7 +4,7 @@
   border: 1px solid;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  padding: 5px;
   margin: 10px;
   transition: box-shadow 0.3s ease;
   width: 100%;
@@ -22,7 +22,7 @@
 
 .stock-card h2 {
   color: #333333;
-  font-size: 15px; /* Taille réduite pour les écrans mobiles */
+  font-size: 12px; /* Taille réduite pour les écrans mobiles */
   margin-bottom: 15px;
   text-align: center;
 }
