@@ -10,7 +10,7 @@
   text-align: center;
   color: blue;
   margin-bottom: 20px;
-  fontsize: 5px;
+
   font-weight: bold;
   font-size: 14px;
 }
@@ -26,13 +26,13 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  textalign: center;
 }
 .nart {
   font-size: 14px;
-  color: #333;
-  textalign: center;
-  fontweight: bolder;
+  color: #e1e4f5;
+  background-color: #414bdb;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 .error {
   color: #b00020;
