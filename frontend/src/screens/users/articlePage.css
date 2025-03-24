@@ -1,83 +1,10 @@
-/* Style général pour les petites résolutions */
-@media (max-width: 280px) {
-  .article-page {
-    margin: 5px;
-    padding: 5px;
-  }
-
-  .title,
-  .nart,
-  .field-label,
-  .field-value,
-  .error,
-  .rescan-button {
-    font-size: 12px; /* Taille de texte réduite pour tout le contenu */
-  }
-
-  .stock-card-info,
-  .article-info,
-  .field-row {
-    padding: 5px; /* Padding réduit */
-  }
-
-  .rescan-button {
-    padding: 8px; /* Bouton plus petit */
-    font-size: 12px;
-  }
-
-  .stock-info-container,
-  .stock-container {
-    flex-direction: column; /* Empilement vertical pour économiser de l'espace */
-  }
-
-  .field-row {
-    flex-direction: column; /* Les étiquettes et les valeurs sont empilées verticalement */
-    align-items: start;
-    margin-bottom: 5px;
-  }
-
-  .deprec-warning,
-  .promo-active {
-    font-size: 10px; /* Plus petits avertissements et promotions */
-    padding: 5px;
-  }
-
-  .stock-rupture,
-  .stock-available {
-    font-size: 10px; /* État du stock en plus petite taille */
-  }
-}
-
-/* Styles spécifiques pour améliorer l'accessibilité sur petits écrans */
-.nart-container,
-.article-header {
-  flex-direction: column; /* Plus de flexibilité dans la mise en page des headers */
-}
-
-.stock-card-info {
-  align-items: center; /* Centrage pour une meilleure lecture */
-  display: flex;
-  font-size: 16px;
-}
-.stock-card-info h3 {
-  font-size: 10px;
-}
-.stock-card-info p {
-  font-size: 18px;
-  marginleft: 100px;
-}
-
 /* Style général de la page */
 .article-page {
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
   margin: 20px;
   padding: 20px;
 }
 
-/* Conteneur qui intègre l'image de fond pour la partie principale de l'article */
-.photo {
-  height: 300px;
-}
 /* Les styles existants */
 .title {
   text-align: center;
@@ -99,6 +26,7 @@
 .nart {
   font-size: 24px;
   color: #333;
+  textalign: center;
 }
 .error {
   color: #b00020;
@@ -137,9 +65,11 @@
 .field-label {
   font-weight: bold;
   color: #555;
+  fontsize: 6px;
 }
 .field-value {
   color: #666;
+  fontweight: bold;
 }
 .rescan-button {
   display: block;
@@ -177,5 +107,17 @@
   padding: 10px;
   border-radius: 5px;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.promo-active {
+  color: #4caf50;
+  font-weight: bold;
+  fontsize: 6px;
+  background-color: #f0f4c3;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  line-height: 1.5;
   margin-bottom: 20px;
 }

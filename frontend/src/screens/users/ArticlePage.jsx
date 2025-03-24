@@ -44,6 +44,8 @@ const ArticlePage = () => {
 
   return (
     <div className="article-page">
+      {/* Image de l'article, basée sur NART ou une image par défaut */}
+
       {article ? (
         <>
           {article.DEPREC !== 0 && (
@@ -61,23 +63,23 @@ const ArticlePage = () => {
           <div className="stock-info-container">
             <div className="stock-card-info">
               <h3>Stock</h3>
-              <p
+              <span
                 className={
                   article.STOCK === 0 ? "stock-rupture" : "stock-available"
                 }
               >
                 {article.STOCK === 0 ? "RUPTURE" : article.STOCK}
-              </p>
+              </span>
             </div>
             <div className="stock-card-info">
               <h3>En commande</h3>
-              <p
+              <span
                 className={
                   article.ENCDE === 0 ? "stock-rupture" : "stock-available"
                 }
               >
                 {article.ENCDE}
-              </p>
+              </span>
             </div>
           </div>
 
@@ -102,11 +104,6 @@ const ArticlePage = () => {
             </div>
 
             <div className="field-row">
-              <span className="field-label">Taux TGC :</span>
-              <span className="field-value">{article.ATVA ?? "-"}%</span>
-            </div>
-
-            <div className="field-row">
               <span className="field-label">Prix TTC :</span>
               <span className="field-value">
                 {isPromotionActive(article.DPROMOD, article.DPROMOF)
@@ -119,12 +116,18 @@ const ArticlePage = () => {
 
             {isPromotionActive(article.DPROMOD, article.DPROMOF) && (
               <div className="field-row">
-                <span className="field-label ancien-prix">Ancien Prix :</span>
+                <span className="field-label ancien-prix">
+                  hors promotion :
+                </span>
                 <span className="field-value ancien-prix">
                   {article.PVTETTC ? Math.round(article.PVTETTC) : "-"} XPF
                 </span>
               </div>
             )}
+            <div className="field-row">
+              <span className="field-label">Taux TGC :</span>
+              <span className="field-value">{article.ATVA ?? "-"}%</span>
+            </div>
           </div>
         </>
       ) : (
