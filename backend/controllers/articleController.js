@@ -95,5 +95,21 @@ const getArticleByGencode = asyncHandler(async (req, res) => {
   
     res.status(200).json(article);
   });
+// @desc    Get article by NART
+// @route   GET /api/articles/gencode/:gencode
+// @access  Public
+const getArticleByNart = asyncHandler(async (req, res) => {
+    const { nart } = req.params;
+  
+    // Recherche d'un seul article avec le champ GENCODE
+    const article = await Article.findOne({ NART: nart });
+  
+    if (!article) {
+      res.status(404);
+      throw new Error("Article introuvable pour ce nart.");
+    }
+  
+    res.status(200).json(article);
+  });
 
-export { getArticles, getArticleById, getArticlesByFournisseur , getArticleByGencode };
+export { getArticles, getArticleById, getArticlesByFournisseur , getArticleByGencode , getArticleByNart}; 

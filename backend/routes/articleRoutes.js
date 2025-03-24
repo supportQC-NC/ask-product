@@ -4,6 +4,7 @@ import {
   getArticleById,
   getArticlesByFournisseur,
   getArticleByGencode,
+  getArticleByNart,
 } from "../controllers/articleController.js";
 
 const router = express.Router();
@@ -12,4 +13,5 @@ router.get("/", getArticles); // Obtenir tous les articles avec pagination et fi
 router.get("/:id", getArticleById); // Obtenir un article par son ID
 router.get("/fournisseur/:fournisseurId", getArticlesByFournisseur); // Obtenir tous les articles d'un fournisseur
 router.get("/gencode/:gencode", getArticleByGencode);
+router.get("/nart/:nart", getArticleByNart);
 export default router;

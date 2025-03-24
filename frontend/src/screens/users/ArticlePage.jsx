@@ -44,17 +44,6 @@ const ArticlePage = () => {
 
   return (
     <div className="article-page">
-      {/* Image de l'article, basée sur NART ou une image par défaut */}
-      <img
-        className="photo"
-        src={
-          article && article.NART
-            ? `/photos/${article.NART}.jpg`
-            : "/photos/no_photo.png"
-        }
-        alt={article ? article.DESIGN : "Pas de photo"}
-      />
-
       {article ? (
         <>
           {article.DEPREC !== 0 && (
@@ -72,23 +61,23 @@ const ArticlePage = () => {
           <div className="stock-info-container">
             <div className="stock-card-info">
               <h3>Stock</h3>
-              <span
+              <p
                 className={
                   article.STOCK === 0 ? "stock-rupture" : "stock-available"
                 }
               >
                 {article.STOCK === 0 ? "RUPTURE" : article.STOCK}
-              </span>
+              </p>
             </div>
             <div className="stock-card-info">
               <h3>En commande</h3>
-              <span
+              <p
                 className={
                   article.ENCDE === 0 ? "stock-rupture" : "stock-available"
                 }
               >
                 {article.ENCDE}
-              </span>
+              </p>
             </div>
           </div>
 
