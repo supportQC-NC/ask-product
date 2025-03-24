@@ -4,4 +4,4 @@ export const BASE_URL =
     : "http://localhost:5000";
 
 export const USERS_URL = `${BASE_URL}/users`;
-export const ARTICLES_URL = `${BASE_URL}/articles`;
+export const ARTICLES_URL = `${BASE_URL}/api/articles`;
