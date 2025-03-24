@@ -59,37 +59,40 @@ const ArticlePage = () => {
           )}
 
           <h2 className="title">{article.DESIGN ?? "-"}</h2>
+          <div className="article-header">
+            <div className="nart-container">
+              <span className="nart">{article.NART ?? "-"}</span>
+            </div>
+          </div>
 
           <div className="stock-info-container">
             <div className="stock-card-info">
-              <h3>Stock</h3>
-              <span
-                className={
-                  article.STOCK === 0 ? "stock-rupture" : "stock-available"
-                }
-              >
-                {article.STOCK === 0 ? "RUPTURE" : article.STOCK}
-              </span>
-            </div>
-            <div className="stock-card-info">
-              <h3>En commande</h3>
-              <span
-                className={
-                  article.ENCDE === 0 ? "stock-rupture" : "stock-available"
-                }
-              >
-                {article.ENCDE}
-              </span>
+              <div className="info">
+                <h3>Stock</h3>
+                <span
+                  className={
+                    article.STOCK === 0 ? "stock-rupture" : "stock-available"
+                  }
+                >
+                  {article.STOCK === 0 ? "RUPTURE" : article.STOCK}
+                </span>
+              </div>
+              <div className="stock-card-info">
+                <div className="info">
+                  <h3>En commande</h3>
+                  <span
+                    className={
+                      article.ENCDE === 0 ? "stock-rupture" : "stock-available"
+                    }
+                  >
+                    {article.ENCDE}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
           <div className="article-info">
-            <div className="article-header">
-              <div className="nart-container">
-                <span className="nart">{article.NART ?? "-"}</span>
-              </div>
-            </div>
-
             <div className="field-row">
               <span className="field-label">Gissement :</span>
               <span className="field-value">{article.GISM1 ?? "-"}</span>
