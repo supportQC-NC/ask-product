@@ -111,7 +111,9 @@ const ArticlePage = () => {
               <span className="field-label">Prix TTC :</span>
               <span className="field-value">
                 {isPromotionActive(article.DPROMOD, article.DPROMOF)
-                  ? `${calculPrixPromoTTC(article.PVPROMO, article.ATVA)} XPF`
+                  ? `${Math.round(
+                      calculPrixPromoTTC(article.PVPROMO, article.ATVA)
+                    )} XPF`
                   : `${article.PVTETTC ?? "-"} XPF`}
               </span>
             </div>
