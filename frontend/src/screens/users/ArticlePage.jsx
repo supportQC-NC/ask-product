@@ -33,6 +33,16 @@ const ArticlePage = () => {
     return today >= promoStart && today <= promoEnd;
   };
 
+  const formatDateFr = (dateStr) => {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString("fr-FR");
+  };
+
+  const calculPrixPromoTTC = (prixHT, atva) => {
+    const taux = atva / 100;
+    return (prixHT * (1 + taux)).toFixed(2);
+  };
+
   return (
     <div className="article-page">
       {article ? (
@@ -43,8 +53,7 @@ const ArticlePage = () => {
 
           {isPromotionActive(article.DPROMOD, article.DPROMOF) && (
             <p className="promo-active">
-              EN PROMOTION jusqu'au{" "}
-              {new Date(article.DPROMOF).toLocaleDateString()}
+              EN PROMOTION jusqu'au {formatDateFr(article.DPROMOF)}
             </p>
           )}
 
@@ -102,7 +111,7 @@ const ArticlePage = () => {
               <span className="field-label">Prix TTC :</span>
               <span className="field-value">
                 {isPromotionActive(article.DPROMOD, article.DPROMOF)
-                  ? `${article.PVPROMO ?? "-"} XPF`
+                  ? `${calculPrixPromoTTC(article.PVPROMO, article.ATVA)} XPF`
                   : `${article.PVTETTC ?? "-"} XPF`}
               </span>
             </div>
