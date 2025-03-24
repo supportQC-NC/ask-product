@@ -9,7 +9,6 @@ const ArticlePage = () => {
   const navigate = useNavigate();
   const [article, setArticle] = useState(null);
   const [error, setError] = useState("");
-  const inputRef = useRef(null);
 
   useEffect(() => {
     if (gencode) {
@@ -26,8 +25,6 @@ const ArticlePage = () => {
 
   const handleRescan = () => navigate("/");
 
-  const preventKeyboard = (e) => e.target.blur();
-
   return (
     <div className="article-page">
       {article ? (
@@ -40,7 +37,7 @@ const ArticlePage = () => {
 
           <div className="stock-info-container">
             <div className="stock-card-info">
-              <h3>Stock :</h3>
+              <h3>Stock</h3>
               <span
                 className={
                   article.STOCK === 0 ? "stock-rupture" : "stock-available"
@@ -50,7 +47,7 @@ const ArticlePage = () => {
               </span>
             </div>
             <div className="stock-card-info">
-              <h3>En commande :</h3>
+              <h3>En commande</h3>
               <span
                 className={
                   article.ENCDE === 0 ? "stock-rupture" : "stock-available"
@@ -67,7 +64,6 @@ const ArticlePage = () => {
                 <Barcode value={article.GENCOD ?? ""} format="CODE128" />
               </div> */}
               <div className="nart-container">
-                <span className="nart-label">NART :</span>
                 <span className="nart">{article.NART ?? "-"}</span>
               </div>
             </div>
@@ -95,15 +91,6 @@ const ArticlePage = () => {
               <span className="field-value">{article.PVTETTC ?? "-"} XPF</span>
             </div>
           </div>
-
-          <input
-            type="text"
-            ref={inputRef}
-            readOnly
-            onFocus={preventKeyboard}
-            placeholder="Clique ici sans clavier"
-            className="input-no-keyboard"
-          />
         </>
       ) : (
         <p>Chargement des données de l'article ou article non trouvé...</p>

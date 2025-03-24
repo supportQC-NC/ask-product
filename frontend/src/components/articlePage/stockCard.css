@@ -8,6 +8,9 @@
   margin: 10px;
   transition: box-shadow 0.3s ease;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .stock-card.positive {
   border-color: green;
@@ -19,13 +22,15 @@
 
 .stock-card h2 {
   color: #333333;
-  font-size: 20px; /* Taille réduite pour les écrans mobiles */
+  font-size: 15px; /* Taille réduite pour les écrans mobiles */
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .stock-card p {
   color: #666666;
-  font-size: 30px; /* Taille réduite pour les écrans mobiles */
+  font-size: 20px; /* Taille réduite pour les écrans mobiles */
+  text-align: center;
 }
 
 .stock-card:hover {

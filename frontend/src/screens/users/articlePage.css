@@ -23,7 +23,7 @@
 }
 .nart-container {
   display: flex;
-  flex-direction: column;
+
   justify-content: space-between;
   align-items: center;
 }
@@ -49,6 +49,7 @@
   flex-direction: column; /* Empile les éléments verticalement sur les petits écrans */
   align-items: center; /* Centre les éléments verticalement */
   margin-bottom: 20px;
+  font-size: 15px;
 }
 
 .stock-quantity {
@@ -74,18 +75,21 @@
   border: 1px solid;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  padding: 5px;
   margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: box-shadow 0.3s ease;
   width: 100%;
+  font-size: 10px;
+  text-align: center;
 }
 .stock-card-info span {
-  font-size: 1.8rem;
+  font-size: 19px;
   font-weight: bold;
   margin-top: 1rem;
+  text-align: center;
 }
 
 /* Médias queries pour les tablettes et les desktops */
