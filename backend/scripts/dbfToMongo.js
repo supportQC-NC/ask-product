@@ -81,8 +81,8 @@ async function connectDB() {
     // Choisir l'URI MongoDB en fonction de l'environnement
     const mongoURI =
       process.env.NODE_ENV === "production"
-        ? 'mongodb+srv://rhprodev:RcLcdYca7DDg82Dp@cluster0.w0yso.mongodb.net/qcDb?retryWrites=true&w=majority&appName=Cluster0'
-        : 'mongodb+srv://rhprodev:RcLcdYca7DDg82Dp@cluster0.w0yso.mongodb.net/qcDb?retryWrites=true&w=majority&appName=Cluster0';
+        ? "mongodb://127.0.0.1:27017/ask-product"
+        : "mongodb://127.0.0.1:27017/ask-product";
 
     if (!mongoURI) {
       throw new Error("MongoDB URI is not defined");
@@ -104,7 +104,10 @@ async function connectDB() {
 // 3. Fonctions utilitaires générales
 // ===========================================
 function logError(message) {
-  fs.appendFileSync("./error.log", `${new Date().toISOString()} - ${message}\n`);
+  fs.appendFileSync(
+    "./error.log",
+    `${new Date().toISOString()} - ${message}\n`
+  );
 }
 
 function sanitizeRecord(record) {
@@ -131,7 +134,11 @@ function formatElapsedTime() {
 function createProgressBar(fileName, total) {
   return new cliProgress.SingleBar(
     {
-      format: `${colors.yellow.bold(fileName)} |${colors.blue("{bar}")}| ${colors.green("{value}")}${colors.blue("/{total}")} Enregistrements || {percentage}% || ETA: {eta_formatted}`,
+      format: `${colors.yellow.bold(fileName)} |${colors.blue(
+        "{bar}"
+      )}| ${colors.green("{value}")}${colors.blue(
+        "/{total}"
+      )} Enregistrements || {percentage}% || ETA: {eta_formatted}`,
       barCompleteChar: "\u2588",
       barIncompleteChar: "\u2591",
       hideCursor: true,
@@ -167,11 +174,15 @@ async function processArticles() {
   }
 
   console.log(
-    colors.cyan.bold(`\n📄 Lecture de article.dbf. ${dbf.recordCount} enregistrements.`)
+    colors.cyan.bold(
+      `\n📄 Lecture de article.dbf. ${dbf.recordCount} enregistrements.`
+    )
   );
 
   // On supprime tous les articles déjà présents en DB
-  console.log(colors.yellow(`🗑️ Suppression des anciennes données (articles) ...`));
+  console.log(
+    colors.yellow(`🗑️ Suppression des anciennes données (articles) ...`)
+  );
   await Article.deleteMany();
 
   // Barre de progression
@@ -190,7 +201,11 @@ async function processArticles() {
     } catch (err) {
       if (err.message.includes("Duplicate field name")) {
         logError(`Duplicate field error in article.dbf: ${err.message}`);
-        console.warn(colors.yellow(`⚠️ Duplicate field detected and skipped in article.dbf.`));
+        console.warn(
+          colors.yellow(
+            `⚠️ Duplicate field detected and skipped in article.dbf.`
+          )
+        );
       } else {
         const errorMsg = `❌ Erreur d'insertion pour article.dbf: ${err.message}`;
         console.error(colors.red(errorMsg));
@@ -221,7 +236,9 @@ async function processArticles() {
     await processArticles();
 
     // 3) Confirmation et temps total
-    console.log(colors.green.inverse("🎉 Importation complète pour article.dbf"));
+    console.log(
+      colors.green.inverse("🎉 Importation complète pour article.dbf")
+    );
     console.log(colors.cyan(`⏱️ Temps total écoulé : ${formatElapsedTime()}`));
     console.timeEnd("⏱️ Temps total d'exécution");
   } catch (error) {
