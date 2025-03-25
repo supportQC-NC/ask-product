@@ -30,6 +30,7 @@
   color: #3353ad;
   font-size: 30px; /* Taille réduite pour les écrans mobiles */
   text-align: center;
+  font-weight: bolder;
 }
 
 .stock-card:hover {

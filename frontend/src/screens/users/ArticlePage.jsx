@@ -96,7 +96,7 @@ const ArticlePage = () => {
           <div className="article-info">
             <div className="field-row">
               <span className="field-label">Gissement :</span>
-              <span className="field-value">{article.GISM1 ?? "-"}</span>
+              <span className="field-value gis">{article.GISM1 ?? "-"}</span>
             </div>
 
             <div className="stock-container">
@@ -135,7 +135,7 @@ const ArticlePage = () => {
           </div>
         </>
       ) : (
-        <p>Chargement des données de l'article ou article non trouvé...</p>
+        <p>recherche de l'article ...</p>
       )}
 
       {error && <p className="error">{error}</p>}

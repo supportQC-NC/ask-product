@@ -4,12 +4,22 @@ import "./home.css"; // <-- Import du fichier CSS
 
 const Home = () => {
   const [gencode, setGencode] = useState("");
+  const [isSearching, setIsSearching] = useState(false);
   const navigate = useNavigate();
 
   const handleSearch = () => {
-    if (gencode.trim()) {
+    if (gencode.trim() && !isSearching) {
+      setIsSearching(true);
       // Redirection vers la page "Article" en passant le GENCODE
-      navigate(`/user/article/${gencode}`);
+      navigate(`/user/article/${gencode}`).then(() => {
+        setIsSearching(false);
+      });
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
     }
   };
 
@@ -24,9 +34,15 @@ const Home = () => {
           placeholder="Scannez ou saisissez un GENCODE"
           value={gencode}
           onChange={(e) => setGencode(e.target.value)}
+          onKeyDown={handleKeyDown}
+          autoFocus
         />
-        <button className="search-button" onClick={handleSearch}>
-          Rechercher
+        <button
+          className="search-button"
+          onClick={handleSearch}
+          disabled={isSearching}
+        >
+          {isSearching ? "Recherche en cours..." : "Rechercher"}
         </button>
       </div>
     </div>

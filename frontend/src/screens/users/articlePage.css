@@ -10,9 +10,8 @@
   text-align: center;
   color: blue;
   margin-bottom: 20px;
-
   font-weight: bold;
-  font-size: 14px;
+  font-size: 18px;
 }
 .article-header {
   display: flex;
@@ -57,9 +56,12 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background-color: rgb(163, 196, 219);
+  background-color: rgba(90, 19, 221, 0.295);
   margin: 10px 0;
   border-radius: 8px;
+  color: #3353ad;
+  font-weight: bolder;
+  text-transform: uppercase;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -141,13 +143,24 @@
 }
 
 .promo-active {
-  color: #4caf50;
+  color: #c4f0c6;
   font-weight: bold;
   fontsize: 6px;
-  background-color: #f0f4c3;
+  background-color: #077907;
   padding: 5px;
   text-align: center;
   border-radius: 5px;
   line-height: 1.5;
   margin-bottom: 20px;
+}
+
+.ancien-prix {
+  text-decoration: line-through;
+  text-decoration-color: #050505;
+}
+
+.gis {
+  font-weight: bolder;
+  color: #3353ad;
+  font-size: 20px;
 }
