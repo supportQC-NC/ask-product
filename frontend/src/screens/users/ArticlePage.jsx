@@ -46,7 +46,16 @@ const ArticlePage = () => {
   return (
     <div className="article-page">
       {/* Image de l'article, basée sur NART ou une image par défaut */}
-
+      {/* Image de l'article, basée sur NART ou une image par défaut */}
+      {article ? (
+        <img
+          className="article-image"
+          src={`/photos/${article.NART ?? "default"}.png`}
+          alt={article.DESIGN ?? "-"}
+        />
+      ) : (
+        <img className="article-image" src="/photos/default.png" alt="" />
+      )}
       {article ? (
         <>
           {article.DEPREC !== 0 && (
@@ -60,6 +69,8 @@ const ArticlePage = () => {
           )}
 
           <h2 className="title">{article.DESIGN ?? "-"}</h2>
+          {/* Image de l'article, basée sur NART ou une image par défaut */}
+
           <div className="article-header">
             <div className="nart-container">
               <p>Nart</p>

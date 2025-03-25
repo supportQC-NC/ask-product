@@ -134,8 +134,10 @@
   }
 }
 .deprec-warning {
-  color: #b00020;
-  background-color: #ffcdd2;
+  color: #ecccd2;
+  background-color: #991f2c;
+  text-transform: uppercase;
+  font-weight: bolder;
   padding: 10px;
   border-radius: 5px;
   text-align: center;
@@ -145,7 +147,6 @@
 .promo-active {
   color: #c4f0c6;
   font-weight: bold;
-  fontsize: 6px;
   background-color: #077907;
   padding: 5px;
   text-align: center;
@@ -163,4 +164,10 @@
   font-weight: bolder;
   color: #3353ad;
   font-size: 20px;
+}
+
+.article-image {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
 }
