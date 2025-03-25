@@ -61,6 +61,7 @@ const ArticlePage = () => {
           <h2 className="title">{article.DESIGN ?? "-"}</h2>
           <div className="article-header">
             <div className="nart-container">
+              <p>Nart</p>
               <span className="nart">{article.NART ?? "-"}</span>
             </div>
           </div>

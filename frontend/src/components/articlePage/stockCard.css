@@ -4,7 +4,7 @@
   border: 1px solid;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 5px;
+  padding: 10px 30px;
   margin: 10px;
   transition: box-shadow 0.3s ease;
   width: 100%;
@@ -22,14 +22,13 @@
 
 .stock-card h2 {
   color: #333333;
-  font-size: 12px; /* Taille réduite pour les écrans mobiles */
-  margin-bottom: 15px;
+  font-size: 18px; /* Taille réduite pour les écrans mobiles */
   text-align: center;
 }
 
 .stock-card p {
-  color: #666666;
-  font-size: 20px; /* Taille réduite pour les écrans mobiles */
+  color: #3353ad;
+  font-size: 30px; /* Taille réduite pour les écrans mobiles */
   text-align: center;
 }
 

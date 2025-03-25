@@ -25,14 +25,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 70%;
+  background-color: #414bdb;
+  color: #e1e4f5;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: auto;
+}
+.nart-container p {
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .nart {
-  font-size: 14px;
-  color: #e1e4f5;
-  background-color: #414bdb;
-  padding: 5px 10px;
-  border-radius: 5px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #dfd7f1;
 }
 .error {
   color: #b00020;
