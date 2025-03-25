@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./articlePage.css";
 import StockCard from "../../components/articlePage/StockCard";
+import Loader from "../../components/loader/Loader";
 
 const ArticlePage = () => {
   const { gencode } = useParams();
@@ -135,7 +136,7 @@ const ArticlePage = () => {
           </div>
         </>
       ) : (
-        <p>recherche de l'article ...</p>
+        <Loader />
       )}
 
       {error && <p className="error">{error}</p>}
