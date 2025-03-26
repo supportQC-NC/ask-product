@@ -63,6 +63,13 @@ const ArticlePage = () => {
     return (prixHT * (1 + taux)).toFixed(2);
   };
 
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat("fr-FR", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(price);
+  };
+
   return (
     <div className="article-page">
       {article && imageSrc ? (
@@ -150,10 +157,12 @@ const ArticlePage = () => {
               <span className="field-label">Prix TTC :</span>
               <span className="field-value">
                 {isPromotionActive(article.DPROMOD, article.DPROMOF)
-                  ? `${Math.round(
-                      calculPrixPromoTTC(article.PVPROMO, article.ATVA)
+                  ? `${formatPrice(
+                      Math.round(
+                        calculPrixPromoTTC(article.PVPROMO, article.ATVA)
+                      )
                     )} XPF`
-                  : `${article.PVTETTC ?? "-"} XPF`}
+                  : `${formatPrice(article.PVTETTC ?? 0)} XPF`}
               </span>
             </div>
 
@@ -163,7 +172,9 @@ const ArticlePage = () => {
                   hors promotion :
                 </span>
                 <span className="field-value ancien-prix">
-                  {article.PVTETTC ? Math.round(article.PVTETTC) : "-"} XPF
+                  {article.PVTETTC
+                    ? `${formatPrice(article.PVTETTC)} XPF`
+                    : "-"}
                 </span>
               </div>
             )}
