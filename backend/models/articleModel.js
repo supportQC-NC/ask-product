@@ -26,7 +26,7 @@ const articleSchema = new mongoose.Schema(
     PDETAIL: { type: Number, default: 0 }, // Prix détail
     PACHAT: { type: Number, default: 0 }, // Prix d'achat
     TAXES: { type: Number, default: 0 }, // Taxes
-    OBSERV: { type: String }, // Observations
+    OBSERV: { type: String, default: null }, // Observations
     POURC: { type: Number, default: 0 }, // Pourcentage
     DERPREV: { type: Number, default: 0 }, // Dernier prix prévu
     V1: { type: Number, default: 0 }, // Ventes mois 1

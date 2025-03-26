@@ -87,7 +87,7 @@ const ArticlePage = () => {
       {article ? (
         <>
           {article.DEPREC !== 0 && (
-            <p className="deprec-warning">Produit déprécié</p>
+            <p className="deprec-warning">Article déprécié</p>
           )}
 
           {isPromotionActive(article.DPROMOD, article.DPROMOF) && (
@@ -171,6 +171,24 @@ const ArticlePage = () => {
               <span className="field-label">Taux TGC :</span>
               <span className="field-value">{article.ATVA ?? "-"}%</span>
             </div>
+            <div className="field-row">
+              <span className="field-label">Prix HT :</span>
+              <span className="field-value">{article.PVTE ?? "-"} XPF</span>
+            </div>
+            <div className="field-row">
+              <span className="field-label">Ref Fournisseur:</span>
+              <span className="field-value">{article.REFER ?? "-"}</span>
+            </div>
+          </div>
+          <div className="observation">
+            <h3 className="observation-title">Observation</h3>
+            <p
+              className={`field-value ${
+                !article.OBSERV ? "empty-observation" : ""
+              }`}
+            >
+              {article.OBSERV ?? "Aucune observation"}
+            </p>
           </div>
         </>
       ) : (
