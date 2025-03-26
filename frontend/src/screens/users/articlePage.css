@@ -168,6 +168,7 @@
 
 .article-image {
   display: block;
-  margin: 20px auto;
+  margin: 0px auto;
+  height: 100px;
   max-width: 100%;
 }
