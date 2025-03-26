@@ -53,8 +53,10 @@ const ArticlePage = () => {
       const pdfFileUrl = `/photos/${article.NART}.pdf`;
       fetch(pdfFileUrl)
         .then((response) => {
-          if (response.ok) {
+          if (response.status === 200) {
             setPdfFile(pdfFileUrl);
+          } else if (response.status === 404) {
+            setPdfFile("");
           } else {
             setPdfFile("");
           }
@@ -241,7 +243,7 @@ const ArticlePage = () => {
                   {article.OBSERV ?? "Aucune observation"}
                 </p>
               </div>
-              {pdfFile !== "" && (
+              {pdfFile && pdfFile !== "" && (
                 <div className="fiche-technique">
                   <h3 className="fiche-technique-title">Fiche technique</h3>
                   <a
