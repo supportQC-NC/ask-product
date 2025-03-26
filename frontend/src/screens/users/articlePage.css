@@ -194,3 +194,10 @@
   margin-bottom: 10px;
   color: #3353ad;
 }
+
+.observation-txt {
+  width: 100%; /* largeur maximale */
+  height: 200px; /* hauteur maximale */
+  overflow: auto; /* faire défiler le contenu si nécessaire */
+  word-wrap: break-word; /* couper les mots pour revenir à la ligne */
+}
