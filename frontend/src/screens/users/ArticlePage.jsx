@@ -10,7 +10,7 @@ const ArticlePage = () => {
   const [article, setArticle] = useState(null);
   const [error, setError] = useState("");
   const [imageSrc, setImageSrc] = useState(null);
-  const [pdfFile, setPdfFile] = useState(false);
+  const [pdfFile, setPdfFile] = useState("");
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
@@ -54,13 +54,13 @@ const ArticlePage = () => {
       fetch(pdfFileUrl)
         .then((response) => {
           if (response.ok) {
-            setPdfFile(true);
+            setPdfFile(pdfFileUrl);
           } else {
-            setPdfFile(false);
+            setPdfFile("");
           }
         })
         .catch((error) => {
-          setPdfFile(false);
+          setPdfFile("");
         });
     }
   }, [article]);
@@ -241,11 +241,11 @@ const ArticlePage = () => {
                   {article.OBSERV ?? "Aucune observation"}
                 </p>
               </div>
-              {pdfFile && (
+              {pdfFile !== "" && (
                 <div className="fiche-technique">
                   <h3 className="fiche-technique-title">Fiche technique</h3>
                   <a
-                    href={`/photos/${article.NART}.pdf`}
+                    href={pdfFile}
                     download={`${article.NART}.pdf`}
                     target="_blank"
                     rel="noopener noreferrer"
