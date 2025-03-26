@@ -9,6 +9,7 @@ const ArticlePage = () => {
   const navigate = useNavigate();
   const [article, setArticle] = useState(null);
   const [error, setError] = useState("");
+  const [imageSrc, setImageSrc] = useState(null);
 
   useEffect(() => {
     if (gencode) {
@@ -22,6 +23,25 @@ const ArticlePage = () => {
         .catch((err) => setError(err.message));
     }
   }, [gencode]);
+
+  useEffect(() => {
+    if (article) {
+      const handleImageLoad = async (imageSrc) => {
+        try {
+          const response = await fetch(imageSrc);
+          if (response.ok) {
+            setImageSrc(imageSrc);
+          } else {
+            setImageSrc("/photos/default.png");
+          }
+        } catch (error) {
+          setImageSrc("/photos/default.png");
+        }
+      };
+
+      handleImageLoad(`/photos/${article.NART ?? "default"}.png`);
+    }
+  }, [article]);
 
   const handleRescan = () => navigate("/");
 
@@ -45,16 +65,24 @@ const ArticlePage = () => {
 
   return (
     <div className="article-page">
-      {/* Image de l'article, basée sur NART ou une image par défaut */}
-      {/* Image de l'article, basée sur NART ou une image par défaut */}
-      {article ? (
+      {article && imageSrc ? (
         <img
           className="article-image"
-          src={`/photos/${article.NART ?? "default"}.png`}
+          src={imageSrc}
           alt={article.DESIGN ?? "-"}
+          onError={(e) => {
+            e.target.src = "/photos/default.png";
+          }}
         />
       ) : (
-        <img className="article-image" src="/photos/default.png" alt="" />
+        <img
+          className="article-image"
+          src="/photos/default.png"
+          alt=""
+          onError={(e) => {
+            e.target.src = "/photos/default.png";
+          }}
+        />
       )}
       {article ? (
         <>
@@ -69,7 +97,6 @@ const ArticlePage = () => {
           )}
 
           <h2 className="title">{article.DESIGN ?? "-"}</h2>
-          {/* Image de l'article, basée sur NART ou une image par défaut */}
 
           <div className="article-header">
             <div className="nart-container">
