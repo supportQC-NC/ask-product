@@ -25,24 +25,17 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h2 className="home-title">Recherche d'article par GENCODE</h2>
+      <h2 className="home-title">Recherche d'articles </h2>
 
-      <div className="search-box">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Scannez ou saisissez un GENCODE"
-          value={gencode}
-          onChange={(e) => setGencode(e.target.value)}
-          onKeyDown={handleKeyDown}
-          autoFocus
-        />
+      <div className="btn-container">
         <button
-          className="search-button"
-          onClick={handleSearch}
-          disabled={isSearching}
+          className="btn"
+          onClick={() => navigate("/user/gencode/search")}
         >
-          {isSearching ? "Recherche en cours..." : "Rechercher"}
+          Recherche par GENCODE
+        </button>
+        <button className="btn" onClick={() => navigate("/user/nart/search")}>
+          Recherche par Nart
         </button>
       </div>
     </div>

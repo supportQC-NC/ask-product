@@ -5,7 +5,15 @@ export const articleApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     // Get all articles with pagination and filters
     getArticles: builder.query({
-      query: ({ page = 1, limit = 20, sort = "createdAt", order = "desc", search = "", filter = "" } = {}) => {
+      query: ({
+        page = 1,
+        limit = 20,
+        sort = "createdAt",
+        order = "desc",
+        search = "",
+        filter = "",
+        nart = "",
+      } = {}) => {
         const params = new URLSearchParams({
           page: page.toString(),
           limit: limit.toString(),
@@ -15,6 +23,7 @@ export const articleApiSlice = apiSlice.injectEndpoints({
 
         if (search) params.append("search", search);
         if (filter) params.append("filter", JSON.stringify(filter));
+        if (nart) params.append("nart", nart);
 
         return {
           url: `${ARTICLES_URL}?${params.toString()}`,
@@ -52,6 +61,17 @@ export const articleApiSlice = apiSlice.injectEndpoints({
     getArticleByGencode: builder.query({
       query: (gencode) => ({
         url: `${ARTICLES_URL}/gencode/${gencode}`,
+        method: "GET",
+        credentials: "include",
+      }),
+      providesTags: ["Article"],
+      keepUnusedDataFor: 5,
+    }),
+
+    // Get article by NART
+    getArticleByNart: builder.query({
+      query: (nart) => ({
+        url: `${ARTICLES_URL}/nart/${nart}`,
         method: "GET",
         credentials: "include",
       }),
@@ -97,7 +117,8 @@ export const {
   useGetArticlesQuery,
   useGetArticleByIdQuery,
   useGetArticlesByFournisseurQuery,
-  useGetArticleByGencodeQuery, 
+  useGetArticleByGencodeQuery,
+  useGetArticleByNartQuery,
   useCreateArticleMutation,
   useUpdateArticleMutation,
   useDeleteArticleMutation,

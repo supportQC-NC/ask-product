@@ -17,6 +17,8 @@ import UserRoutes from "./components/utils/UserRoutes";
 import Login from "./screens/Login";
 import Home from "./screens/users/Home";
 import ArticlePage from "./screens/users/ArticlePage";
+import SearchByGencode from "./screens/users/SearchByGencode";
+import SearchByNart from "./screens/users/SearchByNart";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +29,8 @@ const router = createBrowserRouter(
       <Route path="admin" element={<AdminRoutes />}></Route>
       <Route path="user" element={<UserRoutes />}>
         <Route path="dashboard" element={<Home />} />
+        <Route path="gencode/search" element={<SearchByGencode />} />
+        <Route path="nart/search" element={<SearchByNart />} />
         <Route path="article/:gencode" element={<ArticlePage />} />
       </Route>
       <Route path="*" element={<NotFound />} />
