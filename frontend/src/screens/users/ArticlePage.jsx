@@ -10,7 +10,7 @@ const ArticlePage = () => {
   const [article, setArticle] = useState(null);
   const [error, setError] = useState("");
   const [imageSrc, setImageSrc] = useState(null);
-  const [pdfFile, setPdfFile] = useState(null);
+  const [pdfFile, setPdfFile] = useState(false);
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
@@ -54,13 +54,13 @@ const ArticlePage = () => {
       fetch(pdfFileUrl)
         .then((response) => {
           if (response.ok) {
-            setPdfFile(pdfFileUrl);
+            setPdfFile(true);
           } else {
-            setPdfFile(null);
+            setPdfFile(false);
           }
         })
         .catch((error) => {
-          setPdfFile(null);
+          setPdfFile(false);
         });
     }
   }, [article]);
@@ -242,20 +242,18 @@ const ArticlePage = () => {
                 </p>
               </div>
               {pdfFile && (
-                <>
-                  <div className="fiche-technique">
-                    <h3 className="fiche-technique-title">Fiche technique</h3>
-                    <a
-                      href={pdfFile}
-                      download={`${article.NART}.pdf`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="pdf-button"
-                    >
-                      Télécharger la fiche technique
-                    </a>
-                  </div>
-                </>
+                <div className="fiche-technique">
+                  <h3 className="fiche-technique-title">Fiche technique</h3>
+                  <a
+                    href={`/photos/${article.NART}.pdf`}
+                    download={`${article.NART}.pdf`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pdf-button"
+                  >
+                    Télécharger la fiche technique
+                  </a>
+                </div>
               )}
             </>
           ) : (

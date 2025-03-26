@@ -201,3 +201,10 @@
   overflow: auto; /* faire défiler le contenu si nécessaire */
   word-wrap: break-word; /* couper les mots pour revenir à la ligne */
 }
+
+.fiche-technique {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
