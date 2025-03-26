@@ -184,7 +184,9 @@ const ArticlePage = () => {
             <h3 className="observation-title">Observation</h3>
             <p
               className={`field-value ${
-                !article.OBSERV ? "empty-observation" : ""
+                article.OBSERV === "" || article.OBSERV === null
+                  ? "empty-observation"
+                  : ""
               }`}
             >
               {article.OBSERV ?? "Aucune observation"}
