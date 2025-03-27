@@ -67,6 +67,19 @@ const ArticlePage = () => {
     }
   }, [article]);
 
+  useEffect(() => {
+    const handleEscapeKey = (e) => {
+      if (e.key === "Escape") {
+        navigate("/user/dashboard");
+      }
+    };
+
+    window.addEventListener("keydown", handleEscapeKey);
+    return () => {
+      window.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, [navigate]);
+
   const handleRescan = () => navigate("/");
 
   const isPromotionActive = (start, end) => {

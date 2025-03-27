@@ -46,13 +46,13 @@ const SearchByNart = () => {
           onKeyDown={handleKeyDown}
           autoFocus
         />
-        <button
+        {/* <button
           className="search-button"
           onClick={handleSearch}
           disabled={isSearching || isLoading}
         >
           {isSearching ? "Recherche en cours..." : "Rechercher"}
-        </button>
+        </button> */}
       </div>
     </div>
   );
