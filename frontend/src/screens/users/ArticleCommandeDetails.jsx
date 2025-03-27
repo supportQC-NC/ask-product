@@ -18,29 +18,55 @@ const ArticleCommandeDetails = () => {
     };
   }, [navigate]);
 
+  const commandes = [
+    {
+      etat: "G bateau",
+      numCommande: "329387",
+      qteCommande: 20,
+      qteArrivee: 0,
+      transport: "NORDPACIFIC",
+    },
+    {
+      etat: "En attente",
+      numCommande: "329388",
+      qteCommande: 15,
+      qteArrivee: 5,
+      transport: "SUDPACIFIC",
+    },
+    {
+      etat: "En transit",
+      numCommande: "329389",
+      qteCommande: 30,
+      qteArrivee: 10,
+      transport: "ESTPACIFIC",
+    },
+  ];
+
   return (
     <div className="commande-container">
       <h2>Detail de la commande pour l'article</h2>
-      <div className="commande-item">
-        <p className="commande-label">Etat:</p>
-        <p className="commande-value">G bateau</p>
-      </div>
-      <div className="commande-item">
-        <p className="commande-label">Num commande:</p>
-        <p className="commande-value">329387</p>
-      </div>
-      <div className="commande-item">
-        <p className="commande-label">QTE commande:</p>
-        <p className="commande-value">20</p>
-      </div>
-      <div className="commande-item">
-        <p className="commande-label">QTE arrivée:</p>
-        <p className="commande-value">0</p>
-      </div>
-      <div className="commande-item">
-        <p className="commande-label">Transport:</p>
-        <p className="commande-value">NORDPACIFIC</p>
-      </div>
+      {commandes.map((commande, index) => (
+        <table className="commande-table" key={index}>
+          <thead>
+            <tr>
+              <th>Etat</th>
+              <th>Num commande</th>
+              <th>QTE commande</th>
+              <th>QTE arrivée</th>
+              <th>Transport</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{commande.etat}</td>
+              <td>{commande.numCommande}</td>
+              <td>{commande.qteCommande}</td>
+              <td>{commande.qteArrivee}</td>
+              <td>{commande.transport}</td>
+            </tr>
+          </tbody>
+        </table>
+      ))}
     </div>
   );
 };
