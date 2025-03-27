@@ -13,7 +13,9 @@
   padding: 1.5rem;
 
   /* Dégradé en arrière-plan */
-  background: linear-gradient(to right, #3b82f6, #9333ea, #6366f1);
+  /* background: linear-gradient(to right, #3b82f6, #9333ea, #6366f1); */
+  background: rgb(176, 123, 226);
+
   color: #ffffff; /* texte blanc par défaut */
 }
 
@@ -29,6 +31,7 @@
   font-size: 1.5rem; /* suffisamment grand pour mobile */
   font-weight: bold;
   text-align: center;
+  color: rgb(134, 6, 6);
   margin-bottom: 0.75rem;
 }
 
@@ -38,6 +41,8 @@
   text-align: center;
   margin-bottom: 1.5rem;
   line-height: 1.4;
+  color: rgb(134, 6, 6);
+  font-weight: bolder;
   max-width: 400px; /* pour éviter les lignes trop longues */
 }
 
