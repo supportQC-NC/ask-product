@@ -52,42 +52,18 @@ const SearchByNart = () => {
     };
   }, [searchStatus, navigate]);
 
-  const inputRef = useRef(null);
-
-  const handleFocus = (event) => {
-    event.target.blur(); // Empêche l'ouverture du clavier virtuel
-    setTimeout(() => {
-      inputRef.current.focus(); // Remet le focus sur le champ de saisie caché
-    }, 100);
-  };
-
-  const handleHiddenInputChange = (event) => {
-    setNart(event.target.value);
-  };
-
   return (
     <div className="home-container">
       <h2 className="home-title">Recherche d'article par NART</h2>
 
       <div className="search-box">
         <input
-          type="text"
+          type="tel"
           className="search-input"
           placeholder="Saisissez un NART"
           value={nart}
-          onChange={() => {}} // Empêche la modification directe
+          onChange={(e) => setNart(e.target.value)}
           autoFocus
-          maxLength={6}
-          onFocus={handleFocus}
-          readOnly // Empêche l'ouverture du clavier virtuel
-        />
-        <input
-          type="text"
-          ref={inputRef}
-          className="search-input-hidden"
-          style={{ position: "absolute", opacity: 0, width: 1, height: 1 }}
-          value={nart}
-          onChange={handleHiddenInputChange}
           maxLength={6}
         />
       </div>
