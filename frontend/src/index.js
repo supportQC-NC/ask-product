@@ -19,6 +19,7 @@ import Home from "./screens/users/Home";
 import ArticlePage from "./screens/users/ArticlePage";
 import SearchByGencode from "./screens/users/SearchByGencode";
 import SearchByNart from "./screens/users/SearchByNart";
+import ArticleCommandeDetails from "./screens/users/ArticleCommandeDetails";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,6 +33,10 @@ const router = createBrowserRouter(
         <Route path="gencode/search" element={<SearchByGencode />} />
         <Route path="nart/search" element={<SearchByNart />} />
         <Route path="article/:gencode" element={<ArticlePage />} />
+        <Route
+          path="commande/article/:nart"
+          element={<ArticleCommandeDetails />}
+        />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Route>

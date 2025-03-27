@@ -167,6 +167,28 @@ const ArticlePage = () => {
                       {article.STOCK === 0 ? "RUPTURE" : article.STOCK}
                     </span>
                   </div>
+                </div>
+                {article.ENCDE > 0 ? (
+                  <Link
+                    to={`/user/commande/article/${article.NART}`}
+                    className="stock-info-link"
+                  >
+                    <div className="stock-card-info">
+                      <div className="info">
+                        <h3>En commande</h3>
+                        <span
+                          className={
+                            article.ENCDE === 0
+                              ? "stock-rupture"
+                              : "stock-available"
+                          }
+                        >
+                          {article.ENCDE}
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                ) : (
                   <div className="stock-card-info">
                     <div className="info">
                       <h3>En commande</h3>
@@ -181,7 +203,7 @@ const ArticlePage = () => {
                       </span>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
 
               <div className="article-info">

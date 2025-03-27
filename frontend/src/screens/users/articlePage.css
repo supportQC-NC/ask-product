@@ -208,3 +208,9 @@
   gap: 10px;
   margin-top: 20px;
 }
+
+.stock-info-link :hover {
+  color: #b6c1df;
+  background-color: #450fc2;
+  border-radius: 5px;
+}
