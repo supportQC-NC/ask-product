@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useGetArticleByNartQuery } from "../../slices/articleSlice";
 import { FaSyncAlt } from "react-icons/fa"; // Importez l'icône de rechargement
 import "./searchByGencode.css"; // Importez le fichier CSS
+
 const SearchByNart = () => {
   const [nart, setNart] = useState("");
   const [isSearching, setIsSearching] = useState(false);
@@ -51,6 +52,13 @@ const SearchByNart = () => {
     };
   }, [searchStatus, navigate]);
 
+  const handleFocus = (event) => {
+    event.target.readOnly = true;
+    setTimeout(() => {
+      event.target.readOnly = false;
+    }, 100);
+  };
+
   return (
     <div className="home-container">
       <h2 className="home-title">Recherche d'article par NART</h2>
@@ -64,7 +72,7 @@ const SearchByNart = () => {
           onChange={(e) => setNart(e.target.value)}
           autoFocus
           maxLength={6}
-          readOnly
+          onFocus={handleFocus}
         />
       </div>
 

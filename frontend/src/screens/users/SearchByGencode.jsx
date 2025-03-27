@@ -52,6 +52,13 @@ const SearchByGencode = () => {
     };
   }, [searchStatus, navigate]);
 
+  const handleFocus = (event) => {
+    event.target.readOnly = true;
+    setTimeout(() => {
+      event.target.readOnly = false;
+    }, 100);
+  };
+
   return (
     <div className="home-container">
       <h2 className="home-title">Recherche d'article par GENCODE</h2>
@@ -65,7 +72,7 @@ const SearchByGencode = () => {
           onChange={(e) => setGencode(e.target.value)}
           autoFocus
           maxLength={13}
-          readOnly
+          onFocus={handleFocus}
         />
       </div>
 
