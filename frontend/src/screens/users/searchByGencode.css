@@ -79,3 +79,29 @@
     flex: 1;
   }
 }
+
+.search-status {
+  color: #d67a7a;
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.reload-button {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.reload-icon {
+  margin-right: 5px;
+}

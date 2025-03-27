@@ -1,76 +1,56 @@
-// import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-
-// const SearchByGencode = () => {
-//   const [gencode, setGencode] = useState("");
-//   const [isSearching, setIsSearching] = useState(false);
-//   const navigate = useNavigate();
-
-//   const handleSearch = () => {
-//     if (gencode.trim() && !isSearching) {
-//       setIsSearching(true);
-//       // Redirection vers la page "Article" en passant le GENCODE
-//       navigate(`/user/article/${gencode}`).then(() => {
-//         setIsSearching(false);
-//       });
-//     }
-//   };
-
-//   const handleKeyDown = (e) => {
-//     if (e.key === "Enter") {
-//       handleSearch();
-//     }
-//   };
-
-//   return (
-//     <div className="home-container">
-//       <h2 className="home-title">Recherche d'article par GENCODE</h2>
-
-//       <div className="search-box">
-//         <input
-//           type="text"
-//           className="search-input"
-//           placeholder="Scannez ou saisissez un GENCODE"
-//           value={gencode}
-//           onChange={(e) => setGencode(e.target.value)}
-//           onKeyDown={handleKeyDown}
-//           autoFocus
-//         />
-//         <button
-//           className="search-button"
-//           onClick={handleSearch}
-//           disabled={isSearching}
-//         >
-//           {isSearching ? "Recherche en cours..." : "Rechercher"}
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default SearchByGencode;
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGetArticleByGencodeQuery } from "../../slices/articleSlice"; // Assurez-vous que cette fonction existe et est correctement configurée
+import { FaSyncAlt } from "react-icons/fa"; // Importez l'icône de rechargement
+import "./searchByGencode.css"; // Importez le fichier CSS
 
 const SearchByGencode = () => {
   const [gencode, setGencode] = useState("");
   const [isSearching, setIsSearching] = useState(false);
+  const [searchStatus, setSearchStatus] = useState("");
   const navigate = useNavigate();
   const { data, isLoading, error } = useGetArticleByGencodeQuery(gencode, {
-    skip: !gencode,
+    skip: gencode.length !== 13,
   });
 
   useEffect(() => {
-    if (data && data.GENCOD && !isSearching) {
+    if (gencode.length === 13) {
       setIsSearching(true);
+      setSearchStatus("Recherche en cours...");
+    }
+  }, [gencode]);
+
+  useEffect(() => {
+    if (data && data.GENCOD && isSearching) {
       navigate(`/user/article/${data.GENCOD}`).then(() => {
         setIsSearching(false);
+        setSearchStatus("");
       });
-    } else if (isSearching) {
+    } else if (error && isSearching) {
       setIsSearching(false);
+      setSearchStatus("AUCUN ARTICLE TROUVÉ");
     }
-  }, [data, navigate, isSearching, gencode]);
+  }, [data, error, navigate, isSearching]);
+
+  const handleReload = () => {
+    setGencode("");
+    setSearchStatus("");
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape" && searchStatus === "AUCUN ARTICLE TROUVÉ") {
+        handleReload();
+      } else if (event.key === "Enter") {
+        navigate("/user/dashboard");
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [searchStatus, navigate]);
 
   return (
     <div className="home-container">
@@ -84,8 +64,22 @@ const SearchByGencode = () => {
           value={gencode}
           onChange={(e) => setGencode(e.target.value)}
           autoFocus
+          maxLength={13}
         />
       </div>
+
+      {isSearching && <p>{searchStatus}</p>}
+      {!isSearching && searchStatus && (
+        <div className="search-status-container">
+          <p className="search-status">{searchStatus}</p>
+          {searchStatus === "AUCUN ARTICLE TROUVÉ" && (
+            <button className="reload-button" onClick={handleReload}>
+              <FaSyncAlt className="reload-icon" />
+              Recharger (esc)
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 };
