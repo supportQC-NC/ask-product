@@ -64,6 +64,7 @@ const SearchByNart = () => {
           onChange={(e) => setNart(e.target.value)}
           autoFocus
           maxLength={6}
+          readOnly
         />
       </div>
 

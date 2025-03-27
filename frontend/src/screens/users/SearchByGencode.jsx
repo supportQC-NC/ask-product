@@ -65,6 +65,7 @@ const SearchByGencode = () => {
           onChange={(e) => setGencode(e.target.value)}
           autoFocus
           maxLength={13}
+          readOnly
         />
       </div>
 
