@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGetArticleByNartQuery } from "../../slices/articleSlice";
 import { FaSyncAlt } from "react-icons/fa"; // Importez l'icône de rechargement
@@ -52,11 +52,17 @@ const SearchByNart = () => {
     };
   }, [searchStatus, navigate]);
 
+  const inputRef = useRef(null);
+
   const handleFocus = (event) => {
-    event.target.readOnly = true;
+    event.target.blur(); // Empêche l'ouverture du clavier virtuel
     setTimeout(() => {
-      event.target.readOnly = false;
+      inputRef.current.focus(); // Remet le focus sur le champ de saisie caché
     }, 100);
+  };
+
+  const handleHiddenInputChange = (event) => {
+    setNart(event.target.value);
   };
 
   return (
@@ -69,10 +75,20 @@ const SearchByNart = () => {
           className="search-input"
           placeholder="Saisissez un NART"
           value={nart}
-          onChange={(e) => setNart(e.target.value)}
+          onChange={() => {}} // Empêche la modification directe
           autoFocus
           maxLength={6}
           onFocus={handleFocus}
+          readOnly // Empêche l'ouverture du clavier virtuel
+        />
+        <input
+          type="text"
+          ref={inputRef}
+          className="search-input-hidden"
+          style={{ position: "absolute", opacity: 0, width: 1, height: 1 }}
+          value={nart}
+          onChange={handleHiddenInputChange}
+          maxLength={6}
         />
       </div>
 
