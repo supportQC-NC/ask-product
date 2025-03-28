@@ -28,7 +28,7 @@ const ALLOWED_ORIGINS = [
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const UPLOAD_DIR = path.join(__dirname, "uploads");
+const UPLOAD_DIR = path.join(__dirname, "../uploads");
 
 // Définition des variables
 const app = express();
