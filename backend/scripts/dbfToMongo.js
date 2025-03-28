@@ -5,7 +5,6 @@ import dotenv from "dotenv";
 import colors from "colors";
 import mongoose from "mongoose";
 import cliProgress from "cli-progress";
-import { pathToFileURL } from "url";
 
 // ===========================================
 // 0. Chargement des variables d'environnement
@@ -13,9 +12,10 @@ import { pathToFileURL } from "url";
 dotenv.config({ path: path.resolve("config/config.env") });
 
 // ===========================================
-// 0-bis. Import du modèle Article
+// 0-bis. Import du modèle Article et Fournisseur
 // ===========================================
 import Article from "../models/articleModel.js";
+import Fournisseur from "../models/fournisseurModel.js";
 
 // ===========================================
 // 1. Fonctions utilitaires pour renommer les champs en double
@@ -223,9 +223,83 @@ async function processArticles() {
 }
 
 // ===========================================
-// 5. Lancement principal
+// 5. Importer les fournisseurs depuis fournisseur.dbf
 // ===========================================
-(async function importArticles() {
+async function processFournisseurs() {
+  // Vérifier le chemin du fichier
+  const dbfFolder = path.resolve("./backend/_dbf"); // Ajustez si nécessaire
+  const dbfFilePath = path.join(dbfFolder, "fourniss.dbf");
+
+  if (!fs.existsSync(dbfFilePath)) {
+    const errorMsg = `⚠️ Fichier fournisseur.dbf introuvable dans ${dbfFolder}`;
+    console.warn(colors.yellow(errorMsg));
+    logError(errorMsg);
+    return;
+  }
+
+  let dbf;
+  try {
+    dbf = await openDbfWithRenamedFields(dbfFilePath);
+  } catch (error) {
+    const errorMsg = `❌ Erreur lors de l'ouverture de fournisseur.dbf : ${error.message}`;
+    console.error(colors.red(errorMsg));
+    logError(errorMsg);
+    return;
+  }
+
+  console.log(
+    colors.cyan.bold(
+      `\n📄 Lecture de fournisseur.dbf. ${dbf.recordCount} enregistrements.`
+    )
+  );
+
+  // On supprime tous les fournisseurs déjà présents en DB
+  console.log(
+    colors.yellow(`🗑️ Suppression des anciennes données (fournisseurs) ...`)
+  );
+  await Fournisseur.deleteMany();
+
+  // Barre de progression
+  const progressBar = createProgressBar("fournisseur.dbf", dbf.recordCount);
+  progressBar.start(dbf.recordCount, 0);
+
+  const records = await dbf.readRecords();
+  let insertedCount = 0;
+
+  for (const record of records) {
+    const sanitizedRecord = sanitizeRecord(record);
+    try {
+      await Fournisseur.create(sanitizedRecord);
+      insertedCount++;
+      progressBar.update(insertedCount);
+    } catch (err) {
+      if (err.message.includes("Duplicate field name")) {
+        logError(`Duplicate field error in fournisseur.dbf: ${err.message}`);
+        console.warn(
+          colors.yellow(
+            `⚠️ Duplicate field detected and skipped in fournisseur.dbf.`
+          )
+        );
+      } else {
+        const errorMsg = `❌ Erreur d'insertion pour fournisseur.dbf: ${err.message}`;
+        console.error(colors.red(errorMsg));
+        logError(errorMsg);
+      }
+    }
+  }
+
+  progressBar.stop();
+  console.log(
+    colors.green.bold(
+      `✅ Importation réussie : ${insertedCount}/${dbf.recordCount} enregistrements insérés.`
+    )
+  );
+}
+
+// ===========================================
+// 6. Lancement principal
+// ===========================================
+(async function importData() {
   console.time("⏱️ Temps total d'exécution");
 
   try {
@@ -235,9 +309,14 @@ async function processArticles() {
     // 2) Importation des articles
     await processArticles();
 
-    // 3) Confirmation et temps total
+    // 3) Importation des fournisseurs
+    await processFournisseurs();
+
+    // 4) Confirmation et temps total
     console.log(
-      colors.green.inverse("🎉 Importation complète pour article.dbf")
+      colors.green.inverse(
+        "🎉 Importation complète pour article.dbf et fournisseur.dbf"
+      )
     );
     console.log(colors.cyan(`⏱️ Temps total écoulé : ${formatElapsedTime()}`));
     console.timeEnd("⏱️ Temps total d'exécution");

@@ -9,6 +9,7 @@ import morgan from "morgan";
 import colors from "colors";
 import errorHandler from "./middlewares/error.js";
 import articleRoutes from "./routes/articleRoutes.js";
+import fournisseurRoutes from "./routes/fournisseurRoutes.js";
 
 // Importation des fichiers de routes
 import userRoutes from "./routes/userRoutes.js";
@@ -78,6 +79,7 @@ app.get("/", (req, res) => {
 // Montage des routes
 app.use("/users", userRoutes);
 app.use("/api/articles", articleRoutes);
+app.use("/api/fournisseurs", fournisseurRoutes);
 
 // Middleware pour vérifier l'autorisation et déboguer
 app.use((req, res, next) => {
