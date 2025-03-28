@@ -1,0 +1,458 @@
+zone;libelle;lieux
+ajout_ctl_bur;ajout_ctl_bur;BUREAU
+ajout_ctl_bur_dim;ajout_ctl_dock;BUREAU
+ajout_ctl_dock;ajout_ctl_dock;DOCK
+ajout_ctl_dock_dim;ajout_ctl_dock;DOCK
+ajout_ctl_mag_dim;ajout_ctl_dock;MAGASIN
+ajout_saisi_dock;ajout_saisi_dock;DOCK
+ajout_saisi_mag;ajout_saisi_mag;MAGASIN
+ajout_saisi_vol;ajout_vol_ne_pas_ctl;MAGASIN
+Bur_achat;Bureau achat;BUREAU
+Bur_BFT;Bureau BFT;BUREAU
+Bur_caux;Bureau caux;BUREAU
+Bur_delta;Bureau Deltadore;BUREAU
+Bur_elec_chaus;Bureau electro chaussure;BUREAU
+Bur_electro;Bureau Electro;BUREAU
+Bur_electro_festool;Bureau Electro Festool;BUREAU
+Bur_electro_vet;Bureau electro vetement;BUREAU
+Bur_EPI;Bureau EPI;BUREAU
+Bur_serveur;Bureau Serveur;BUREAU
+correction_doublon;ajout_ctl_dock;DOCK
+deduction_bur;deduction_bur;BUREAU
+deduction_dock;deduction_dock;DOCK
+deduction_dock_sav;deduction_dock_sav;DOCK
+deduction_Mag;deduction_MAG;MAGASIN
+Dock _cde_client;cde client /Resa;DOCK
+Dock _cde_controlees;Cde Four controlees;DOCK
+DOCK_1 _MEZZ_OUTIL_2_G;Collier Vynex CPN Jiancen;DOCK
+DOCK_1_MEZZ_ OUTIL_5_G;Serre joint tournevis niveau cordeau;DOCK
+DOCK_1_MEZZ_OUTIL_1;EPI gants signalisation;DOCK
+DOCK_1_MEZZ_OUTIL_12;Acces tringle ;DOCK
+DOCK_1_MEZZ_OUTIL_13;Outil ;DOCK
+DOCK_1_MEZZ_OUTIL_14_D;Bottes;DOCK
+DOCK_1_MEZZ_OUTIL_14_G;Phyto;DOCK
+DOCK_1_MEZZ_OUTIL_15_D;Pulverisateur entonnoir;DOCK
+DOCK_1_MEZZ_OUTIL_15_G;Access arrossage;DOCK
+DOCK_1_MEZZ_OUTIL_16;Sabre hache ;DOCK
+DOCK_1_MEZZ_OUTIL_19;Plot deck;DOCK
+DOCK_1_MEZZ_OUTIL_2_D;Embout console;DOCK
+DOCK_1_MEZZ_OUTIL_2_F;TG Visserie blist;DOCK
+DOCK_1_MEZZ_OUTIL_20;Palette ;DOCK
+DOCK_1_MEZZ_OUTIL_3_D;Acc meubles Taquets Lamello Cales;DOCK
+DOCK_1_MEZZ_OUTIL_3_F;Tg Vieux stock ;DOCK
+DOCK_1_MEZZ_OUTIL_3_G;Verrou fenetre compas crochet targette;DOCK
+DOCK_1_MEZZ_OUTIL_4_D;Anneau butée patère grille vent passe cable;DOCK
+DOCK_1_MEZZ_OUTIL_4_F;TG Etau ;DOCK
+DOCK_1_MEZZ_OUTIL_4_G;Levage Sangle corde sandow;DOCK
+DOCK_1_MEZZ_OUTIL_5_D;Marteau pince scie;DOCK
+DOCK_1_MEZZ_OUTIL_5_F;TG Plateaux;DOCK
+DOCK_1_MEZZ_OUTIL_6_D;pinceau air comprime;DOCK
+DOCK_1_MEZZ_OUTIL_6_G;Raccord plomberie fil de fer chaine cable;DOCK
+DOCK_1_MEZZ_OUTIL_7_D;sanitaire plomberie;DOCK
+DOCK_1_MEZZ_OUTIL_7_F;TG cremaillere;DOCK
+DOCK_1_MEZZ_OUTIL_7_G;Acces douche tuyau pot rangement ;DOCK
+DOCK_1_MEZZ_OUTIL_8;tuyau grillage pots;DOCK
+DOCK_1_MEZZ_OUTIL_9;manche;DOCK
+DOCK_2_MEZZ_ ELEC_4_D;Cable elec rallonge boite deriv fix elec;DOCK
+DOCK_2_MEZZ_ ELEC_5;Colonne combiné poubelle;DOCK
+DOCK_2_MEZZ_ ELEC_7_D;Rocket vybak agrafe mantion;DOCK
+DOCK_2_MEZZ_ELEC_1;Camping Gaz;DOCK
+DOCK_2_MEZZ_ELEC_10;Vis A4 Bostitch Gaine elec enrouleur;DOCK
+DOCK_2_MEZZ_ELEC_2;Embout foret trépan Mètre ruban;DOCK
+DOCK_2_MEZZ_ELEC_3_D;Collier elec Bache;DOCK
+DOCK_2_MEZZ_ELEC_3_F;Néons;DOCK
+DOCK_2_MEZZ_ELEC_3_G;Cutter pile balai sac poubelle glacière;DOCK
+DOCK_2_MEZZ_ELEC_4_F;Reglettes;DOCK
+DOCK_2_MEZZ_ELEC_4_G;Thermos anti moustique ampoules spots;DOCK
+DOCK_2_MEZZ_ELEC_6;Papier poncer dis abrasif lamelle;DOCK
+DOCK_2_MEZZ_ELEC_7_B;Surstock;DOCK
+DOCK_2_MEZZ_ELEC_7_G;Brosse Dis tronc;DOCK
+DOCK_2_MEZZ_ELEC_8_B;Vis blister;DOCK
+DOCK_2_MEZZ_ELEC_8_D;poste a souder scie tronc moteur bft;DOCK
+DOCK_2_MEZZ_ELEC_8_G;Visserie blister penture;DOCK
+DOCK_2_MEZZ_ELEC_9;Simpson Mitek;DOCK
+DOCK_3_MEZZ BLUM_1_G;Charn pied de meuble;DOCK
+DOCK_3_MEZZ BLUM_10;combine;DOCK
+DOCK_3_MEZZ BLUM_11;pied de table;DOCK
+DOCK_3_MEZZ BLUM_12;acc blum ;DOCK
+DOCK_3_MEZZ BLUM_13;surstock;DOCK
+DOCK_3_MEZZ BLUM_2_D;Merivo box;DOCK
+DOCK_3_MEZZ BLUM_2_G;Tip on aventos  orgaline;DOCK
+DOCK_3_MEZZ BLUM_3_D;Rincomatic bouton poignée ;DOCK
+DOCK_3_MEZZ BLUM_3_G;Antaro;DOCK
+DOCK_3_MEZZ BLUM_4_D;Cylindre serrure mm tub grille;DOCK
+DOCK_3_MEZZ BLUM_4_G;Groom cadenas barrillet verrou;DOCK
+DOCK_3_MEZZ BLUM_5_D;Ens porte;DOCK
+DOCK_3_MEZZ BLUM_5_F;TG serr applique;DOCK
+DOCK_3_MEZZ BLUM_5_G;Locinox bequille;DOCK
+DOCK_3_MEZZ BLUM_6;FAP, poignee tirage serrure 3 pts;DOCK
+DOCK_3_MEZZ BLUM_7;qama;DOCK
+DOCK_3_MEZZ BLUM_8;profil poignee;DOCK
+DOCK_3_MEZZ BLUM_9;range couvert;DOCK
+DOCK_4_MEZZ_ROULETTE_1;Roue et roulettes;DOCK
+DOCK_4_MEZZ_ROULETTE_2;Sechoirs;DOCK
+DOCK_4_MEZZ_ROULETTE_3;toiles ombrières moustiquaires;DOCK
+DOCK_4_MEZZ_ROULETTE_4;Tubes;DOCK
+DOCK_4_MEZZ_ROULETTE_5;Tringles;DOCK
+DOCK_4_RDC_1;ACTEONE - GAZ- WHITE SPIRIT;DOCK
+DOCK_4_RDC_2;RAIL - GALVA;DOCK
+DOCK_4_RDC_3;PALETTE DIVERS;DOCK
+DOCK_CHBR FROI_1;Produit ménager graisse bombe marquage;DOCK
+DOCK_CHBR FROI_10;Geb Mastic;DOCK
+DOCK_CHBR FROI_11;Colle;DOCK
+DOCK_CHBR FROI_12;Sika;DOCK
+DOCK_CHBR FROI_13;Colle A bois;DOCK
+DOCK_CHBR FROI_14;TG Sika;DOCK
+DOCK_CHBR FROI_15;Palette chambre froide;DOCK
+DOCK_CHBR FROI_2;BB peinture;DOCK
+DOCK_CHBR FROI_3;Pâte a bois enduits;DOCK
+DOCK_CHBR FROI_4;BB galva;DOCK
+DOCK_CHBR FROI_5;Fil nylon Peinture lasure;DOCK
+DOCK_CHBR FROI_5 BIS;Antirouille;DOCK
+DOCK_CHBR FROI_6;Bande joint;DOCK
+DOCK_CHBR FROI_7;Adhesif;DOCK
+DOCK_CHBR FROI_8;Adhesif;DOCK
+DOCK_CHBR FROI_9;Adhseif scellment ;DOCK
+DOCK_COMPTOIR_1_D;VBA PASS TF VIS PLACO;DOCK
+DOCK_COMPTOIR_1_F;TG VIS METAL;DOCK
+DOCK_COMPTOIR_1_G;VBA PASS TF;DOCK
+DOCK_COMPTOIR_10;SURSTOCK SOUS ESCALIER;DOCK
+DOCK_COMPTOIR_11;CYLINDRE;DOCK
+DOCK_COMPTOIR_12;CYL S ENT;DOCK
+DOCK_COMPTOIR_13;Sous escallier;DOCK
+DOCK_COMPTOIR_2_D;ECROU ROND INOX VBA INOX;DOCK
+DOCK_COMPTOIR_2_G;VIS AUTO INOX VBA PASS TR /LARGE;DOCK
+DOCK_COMPTOIR_3_D;TIREFOND INOX VIS MEC INOX;DOCK
+DOCK_COMPTOIR_3_F;TG VIS TH TRCC INOX;DOCK
+DOCK_COMPTOIR_3_G;VIS TOLE INOX VIS TH INOX ;DOCK
+DOCK_COMPTOIR_4;VBA DNS VIS CHARPENTE;DOCK
+DOCK_COMPTOIR_5;CHEV GOUJON VIS CHARPENTE;DOCK
+DOCK_COMPTOIR_6;VIS DECK;DOCK
+DOCK_COMPTOIR_7;VIS DECK INOX;DOCK
+DOCK_COMPTOIR_8;CAD SPEC CYL SPEC;DOCK
+DOCK_COMPTOIR_9;TIP ON;DOCK
+DOCK_FOND_ RDC_1;Machines stationnaires GE;DOCK
+DOCK_FOND_ RDC_2;Tubes;DOCK
+DOCK_FOND_MEZZANINE_1;Regles festool pneu souffleur deb;DOCK
+DOCK_FOND_MEZZANINE_2_D;Tondeuse helicoidale compresseur;DOCK
+DOCK_FOND_MEZZANINE_2_G;Net HP Aspirateur;DOCK
+DOCK_FOND_MEZZANINE_3;Motoculteur brasseur ventilateur;DOCK
+DOCK_FOND_MEZZANINE_4;Tondeuse victa;DOCK
+DOCK_FOND_MEZZANINE_5;extracteur palan cric;DOCK
+DOCK_FOND_MEZZANINE_6;touret motopompe;DOCK
+DOCK_FOND_MEZZANINE_7;divers;DOCK
+DOCK_MECALAC;MECALAC;MECALAC
+DOCK_RDC_1;Pointes;DOCK
+DOCK_RDC_10;Paumelles;DOCK
+DOCK_RDC_11;Huile;DOCK
+DOCK_RDC_1bis;Acetone;DOCK
+DOCK_RDC_2_D;Chev clou;DOCK
+DOCK_RDC_2_G;Chev metal Exp;DOCK
+DOCK_RDC_3_D;Vis Rocket;DOCK
+DOCK_RDC_3_F;Acc Scel Chimique ;DOCK
+DOCK_RDC_3_G;Chev placo chev nylon;DOCK
+DOCK_RDC_4_D;Vis auto TF Vis auto TR;DOCK
+DOCK_RDC_4_F;Vis hafele;DOCK
+DOCK_RDC_4_G;Vis béton vis auto TH;DOCK
+DOCK_RDC_5;Rivet;DOCK
+DOCK_RDC_6;Vis toiture pointes;DOCK
+DOCK_RDC_7_D;Vis TH Cabochon Rond neoprene;DOCK
+DOCK_RDC_7_G;Boulon TRCC;DOCK
+DOCK_RDC_8_D;Rond Ecrou galva Tirefond Vis mec;DOCK
+DOCK_RDC_8_G;Paumelle souder Rond 2crou ZN;DOCK
+DOCK_RDC_9;Lubrifiant;DOCK
+DOCK_SAV;SAV;DOCK
+DOCK_SCEB;SCEB;SCEB
+MAG_A_1;Ventilateurs muraux;MAGASIN
+MAG_A_2;Ventilateurs  ;MAGASIN
+MAG_au_M;AU M precompte;MAGASIN
+MAG_B_1;EPI;MAGASIN
+MAG_B_1_V;vitrine LUNETTES EPI;MAGASIN
+MAG_B_2;Lunettes et gants;MAGASIN
+MAG_B_3;Gilet;MAGASIN
+MAG_B_4;Vetements + chaussures;MAGASIN
+MAG_B_5d;Porte outils;MAGASIN
+MAG_B_5g;Protection audio + masque;MAGASIN
+MAG_bipage_cross;CTL oubli cross;MAGASIN
+MAG_bipage_D;CTL oubli Bipage D;MAGASIN
+MAG_bipage_G;CTL oubli Bipage G;MAGASIN
+MAG_bipage_J;CTL oubli Bipage J;MAGASIN
+MAG_bipage_zone B;CTL oubli Bipage B;MAGASIN
+MAG_bipage_zone C;CTL oubli Bipage C;MAGASIN
+MAG_bipage_zone D bis;CTL oubli Bipage D bis;MAGASIN
+MAG_bipage_zone E;CTL oubli Bipage E;MAGASIN
+MAG_bipage_zone F;CTL oubli Bipage F;MAGASIN
+MAG_bipage_zone H;CTL oubli Bipage H;MAGASIN
+MAG_bipage_zone L;CTL oubli Bipage L;MAGASIN
+MAG_C_1;Promo;MAGASIN
+MAG_C_10;allee centrale WD40;MAGASIN
+MAG_C_2;pile caisse;MAGASIN
+MAG_C_3;Expo caisse en face;MAGASIN
+MAG_C_4;BB Peinture;MAGASIN
+MAG_C_5;TG Caisse;MAGASIN
+MAG_C_9;Caisse stock;MAGASIN
+MAG_D_10;Tige Fileté;MAGASIN
+MAG_D_1d;Etancheite Adhesif profil caoutchouc;MAGASIN
+MAG_D_1f;TG ecran ;MAGASIN
+MAG_D_2b;TG Vis INOX A4;MAGASIN
+MAG_D_2d;VBA bois Vis auto;MAGASIN
+MAG_D_2f;TG Sika;MAGASIN
+MAG_D_2g;Mastic Colle;MAGASIN
+MAG_D_3b;TG Nylon;MAGASIN
+MAG_D_3d;Rivet ressort goupille ;MAGASIN
+MAG_D_3d_V1;Vit PINCE A RIVET;MAGASIN
+MAG_D_3d_V2;Vit PINCE ECROU AVEUGLE;MAGASIN
+MAG_D_3f;TG scellement;MAGASIN
+MAG_D_3g;Vis charpente boul TRCC Pointes;MAGASIN
+MAG_D_4b;TG bande velcro;MAGASIN
+MAG_D_4d;Cheville;MAGASIN
+MAG_D_4f;TG Colle;MAGASIN
+MAG_D_4g;Inox;MAGASIN
+MAG_D_5b;TG vis imperial UNF;MAGASIN
+MAG_D_5d;Corde Accastillage;MAGASIN
+MAG_D_5f;TG Sandow;MAGASIN
+MAG_D_5g;Collier + Vis TH et Mec;MAGASIN
+MAG_D_5g_V;VIS POINTEAU;MAGASIN
+MAG_D_5g_V1;ANNEAU LEVAGE INOX A4;MAGASIN
+MAG_D_5g_V2;ACCASTILLAGE A4;MAGASIN
+MAG_D_6d;Lub - Droguerie - hygiene;MAGASIN
+MAG_D_6d_V;GRAISSEUR;MAGASIN
+MAG_D_6f;TG Sangle;MAGASIN
+MAG_D_6g;Levage - cable;MAGASIN
+MAG_D_7;Ecrou Rondelle ;MAGASIN
+MAG_D_Vrac;visserie vrac;MAGASIN
+MAG_E_1d;Fil Fer et fixation plomberie;MAGASIN
+MAG_E_2d;Robinet et raccord galva;MAGASIN
+MAG_E_2f;TG Ruban signalisation;MAGASIN
+MAG_E_2g;Joint abattant WC;MAGASIN
+MAG_E_3d;vidage WC;MAGASIN
+MAG_E_3f;TG savon main;MAGASIN
+MAG_E_3g;raccord cuivre - outil plomberie;MAGASIN
+MAG_E_3g_V;OUTIL PLOMBERIE;MAGASIN
+MAG_E_4d;lampe balladeuse;MAGASIN
+MAG_E_4d_V1;CARRILLON ELECTRIQUE;MAGASIN
+MAG_E_4d_V2;LAMPE FRONTALE;MAGASIN
+MAG_E_4f;TG lampe torche;MAGASIN
+MAG_E_4g;Robinetterie  - acc SDB;MAGASIN
+MAG_E_5b;TG goulotte;MAGASIN
+MAG_E_5d;fix electricité;MAGASIN
+MAG_E_5f;TG solaire 1;MAGASIN
+MAG_E_5g;ampoule enrouleur bloc prise;MAGASIN
+MAG_E_6b;TG chemin cable;MAGASIN
+MAG_E_6d;luminaire - cable élec;MAGASIN
+MAG_E_6f;TG solaire 2;MAGASIN
+MAG_E_6g;appareillage elect;MAGASIN
+MAG_E_6g_V1;DISJONCTEUR;MAGASIN
+MAG_E_6g_V2;COFFRET ELECTRIQUE;MAGASIN
+MAG_E_7;Raccord PVC Gouttiere;MAGASIN
+MAG_E_8;Tringle Pvc gouttière Tuy Poly;MAGASIN
+MAG_E_9;Penderie Multimètre;MAGASIN
+MAG_E_9_V;MULTIMETRE;MAGASIN
+MAG_F_1;escabeau - echelle;MAGASIN
+MAG_F_10;bois;MAGASIN
+MAG_F_20;Chutes Alu;MAGASIN
+MAG_F_21;Rajout alu plinthe;MAGASIN
+MAG_F_2d;profil PVC - Alfer;MAGASIN
+MAG_F_2g;marche pied diable;MAGASIN
+MAG_F_3d;maconnerie;MAGASIN
+MAG_F_3f;TG rail placo;MAGASIN
+MAG_F_3g;Bas de porte, règle alu;MAGASIN
+MAG_F_4d;peinture;MAGASIN
+MAG_F_4f;TG sac gravat;MAGASIN
+MAG_F_4g;pinceau;MAGASIN
+MAG_F_4g_V;Vit COUPE VERRE;MAGASIN
+MAG_F_5d;Plexi sisalation;MAGASIN
+MAG_F_5f;Moustiquaire au M;MAGASIN
+MAG_F_5g;lasure;MAGASIN
+MAG_F_6;surstock;MAGASIN
+MAG_F_9;alu;MAGASIN
+MAG_G_10b;TG Tapis au m;MAGASIN
+MAG_G_10d;roue meuble;MAGASIN
+MAG_G_10f;TG Suki;MAGASIN
+MAG_G_10g;Poudre BTP;MAGASIN
+MAG_G_1b;TG ventouse;MAGASIN
+MAG_G_1f;TG boite a clé code;MAGASIN
+MAG_G_1f_V;MOUSQUETON;MAGASIN
+MAG_G_1g;meuble;MAGASIN
+MAG_G_2f;TG Pince;MAGASIN
+MAG_G_2g;Placard porte coulissante;MAGASIN
+MAG_G_2g_V1;ACC PORTE COULISSANTE;MAGASIN
+MAG_G_3b;TG Porte panneaux;MAGASIN
+MAG_G_3d;embout;MAGASIN
+MAG_G_3d_V;AIMANT;MAGASIN
+MAG_G_3f;TG Cad spéciaux;MAGASIN
+MAG_G_3g;charniere paumelle;MAGASIN
+MAG_G_3g_V;CHARNIERE;MAGASIN
+MAG_G_4b;TG Arriere;MAGASIN
+MAG_G_4d;portail et acc;MAGASIN
+MAG_G_4d_V1;MOTEUR PORTAIL;MAGASIN
+MAG_G_4d_V2;ACC PORTAIL;MAGASIN
+MAG_G_4f;TG ens porte;MAGASIN
+MAG_G_4g;ens porte;MAGASIN
+MAG_G_5b;TG Chant;MAGASIN
+MAG_G_5d;butoir et acc;MAGASIN
+MAG_G_5d_V;Vit BUTEE DE PORTE;MAGASIN
+MAG_G_5f;TG cad comb;MAGASIN
+MAG_G_5g;fenetre et ser MM;MAGASIN
+MAG_G_5g_V1;VOLET ROULANT;MAGASIN
+MAG_G_5g_V2;SERRURE MM;MAGASIN
+MAG_G_5g_V3;CONTRÔLE ACCES;MAGASIN
+MAG_G_6b;TG Arriere;MAGASIN
+MAG_G_6d;ens beq et rosette;MAGASIN
+MAG_G_6d_V;ACC MAIN COURANTE;MAGASIN
+MAG_G_6f;TG poignee tub;MAGASIN
+MAG_G_6g;Fermetures exterieures;MAGASIN
+MAG_G_7b;TG serrure applique;MAGASIN
+MAG_G_7b_V;SERR APPLIQUE;MAGASIN
+MAG_G_7d;serrure;MAGASIN
+MAG_G_7d_V1;SER CYL AXE SPEC;MAGASIN
+MAG_G_7d_V2;LOCINOX;MAGASIN
+MAG_G_7f;TG cad normaux;MAGASIN
+MAG_G_7g;Connecteur charpente;MAGASIN
+MAG_G_8b;TG Arriere;MAGASIN
+MAG_G_8d;penture;MAGASIN
+MAG_G_8d_V;PIVOT PORTAIL;MAGASIN
+MAG_G_8g;roue ind;MAGASIN
+MAG_G_9d;Poteau Equerre;MAGASIN
+MAG_G_9f;TG cable antivol;MAGASIN
+MAG_G_9g;console;MAGASIN
+MAG_H_10b;Foret beton;MAGASIN
+MAG_H_10f;Trepan ac;MAGASIN
+MAG_H_10f_V;TREPAN METAL;MAGASIN
+MAG_H_11b;Papier Agrip;MAGASIN
+MAG_H_11f;Trepan bet + diam;MAGASIN
+MAG_H_11f_V;FORET DIAMANT;MAGASIN
+MAG_H_12b;Disque tronconner;MAGASIN
+MAG_H_12f;Bande ponce;MAGASIN
+MAG_H_13b;Papier Ponc;MAGASIN
+MAG_H_13f;Lame scie circ;MAGASIN
+MAG_H_14b;Fraise Def + mandrin;MAGASIN
+MAG_H_14b_V1;FRAISE A BOIS 1;MAGASIN
+MAG_H_14b_V2;FRAISE A BOIS 2;MAGASIN
+MAG_H_14b_V3;MANDRIN PERCEUSE;MAGASIN
+MAG_H_14f;Disq Diam;MAGASIN
+MAG_H_15b;Fer + divers FMB;MAGASIN
+MAG_H_15b_V1;PORTE OUTIL;MAGASIN
+MAG_H_15b_V2;COUTEAUX P/ PORTE OUTIL;MAGASIN
+MAG_H_15f;Lame Scie ST;MAGASIN
+MAG_H_16;Machine stationnaire;MAGASIN
+MAG_H_17;Comptoir Festool;MAGASIN
+MAG_H_17_bis;H17 sur bureau;MAGASIN
+MAG_H_17g_V1;ACC FESTOOL 1;MAGASIN
+MAG_H_17g_V2;PLATEAU PONCEUSE;MAGASIN
+MAG_H_17g_V3;ACC FESTOOL 2;MAGASIN
+MAG_H_18g;Festool+electro bosch+ ingco20v +touret;MAGASIN
+MAG_H_18g_V1;BATTERIE BOSCH;MAGASIN
+MAG_H_18g_V2;BATTERIE INGCO;MAGASIN
+MAG_H_1d;Metre tracage equerre;MAGASIN
+MAG_H_1d_V;REGLET PIED A COULISSE;MAGASIN
+MAG_H_20;Promo_bac_allee_metrage;MAGASIN
+MAG_H_2d;serre joint;MAGASIN
+MAG_H_3b;TG micro mesure;MAGASIN
+MAG_H_3b_V;MICROMESURE;MAGASIN
+MAG_H_3d;cle - outillage main ;MAGASIN
+MAG_H_3d_V1;DOUILLE;MAGASIN
+MAG_H_3d_V2;CLE DYNANOMETRIQUE;MAGASIN
+MAG_H_3f;TG film solaire;MAGASIN
+MAG_H_3g;niveau et compas - laser;MAGASIN
+MAG_H_3g_V1;MESURE LASER;MAGASIN
+MAG_H_3g_V2;NIVEAU LASER;MAGASIN
+MAG_H_3g_V3;CAMERA INSPECTION;MAGASIN
+MAG_H_3g_V4;COMPAS MESURE;MAGASIN
+MAG_H_4d;Scie - pneumatique et agrafe;MAGASIN
+MAG_H_4d_V1;AGRAFFE;MAGASIN
+MAG_H_4d_V2;AGRAFFEUSE ELEC;MAGASIN
+MAG_H_4f;TG Bosticht;MAGASIN
+MAG_H_4f_V;BOSTITCH;MAGASIN
+MAG_H_4g;pince marteau;MAGASIN
+MAG_H_5d;Brosse - Dremel - Fraise Met;MAGASIN
+MAG_H_5d_V1;FRAISE A METAL;MAGASIN
+MAG_H_5d_V2;TARAUDS;MAGASIN
+MAG_H_5f;TG galvanisation;MAGASIN
+MAG_H_5g;Tournevis;MAGASIN
+MAG_H_5g_V1;POINTEAU;MAGASIN
+MAG_H_5g_V2;CHIFFRE A FRAPPER;MAGASIN
+MAG_H_6d;Sculpture Ciseau;MAGASIN
+MAG_H_6d_V1;CISEAU 1;MAGASIN
+MAG_H_6d_V2;CISEAU 2;MAGASIN
+MAG_H_6d_V3;SCIE JAPONAISE;MAGASIN
+MAG_H_6g ;rabot rape;MAGASIN
+MAG_H_6g_V1;RABOT;MAGASIN
+MAG_H_6g_V2;PIERRE A AIGUISER;MAGASIN
+MAG_H_7d;Compresseur electro filaire;MAGASIN
+MAG_H_7g;Soudure;MAGASIN
+MAG_H_7g_V1;ELECTRODE SOUDURE;MAGASIN
+MAG_H_7g_V2;CLE A CHOC PNEUMATIQUE;MAGASIN
+MAG_H_7g_V3;PONCEUSE PNEUMATIQUE;MAGASIN
+MAG_H_8b;Meche bois;MAGASIN
+MAG_H_8f;Embouts;MAGASIN
+MAG_H_8f_V;RENVOI D ANGLE;MAGASIN
+MAG_H_9b;Foret metaux;MAGASIN
+MAG_H_9f;Fraise bois;MAGASIN
+MAG_H_9f_V1;FER A RABOT ;MAGASIN
+MAG_H_9f_V2;MECHE A FACONNER;MAGASIN
+MAG_I_1;Blum;MAGASIN
+MAG_I_2;pied de table + poignee bat;MAGASIN
+MAG_I_3;Bouton - cuvette;MAGASIN
+MAG_I_3_V1;PIVOT SOL;MAGASIN
+MAG_I_3_V2;GABARIT BLUM;MAGASIN
+MAG_I_4;Poste a souder - GE - pack electro;MAGASIN
+MAG_I_4_V1;BOBINE P/ POSTE MIG;MAGASIN
+MAG_I_4_V2;ACC POSTE A SOUDER;MAGASIN
+MAG_I_5;Aspirateur;MAGASIN
+MAG_I_6;Nettoyeur HP;MAGASIN
+MAG_I_7;Deck + consign + charniere;MAGASIN
+MAG_I_7_V1;CAD CONSIGNATION;MAGASIN
+MAG_I_7_V2;CHARNIERE SPECIALE;MAGASIN
+MAG_I_8;Blum Showroom + profil poignée;MAGASIN
+MAG_J_1;Tronconneuse ;MAGASIN
+MAG_J_10;MAG_J_10f : TG fil deb;MAGASIN
+MAG_J_10d;Bache;MAGASIN
+MAG_J_10g;Jerrican tete deb;MAGASIN
+MAG_J_11;Huile 2T - pièce détachée;MAGASIN
+MAG_J_12;Grillage piquet barbelé;MAGASIN
+MAG_J_13;Machine expo;MAGASIN
+MAG_J_14;Comptoir SAV;MAGASIN
+MAG_J_2;Deb tondeuse;MAGASIN
+MAG_J_3;Toile ombrière;MAGASIN
+MAG_J_4;Acc remorque + huile auto;MAGASIN
+MAG_J_5d;Cric chargeur bat elec auto;MAGASIN
+MAG_J_5d_V1;ACC ELEC AUTO 1;MAGASIN
+MAG_J_5d_V2;ACC ELEC AUTO 2;MAGASIN
+MAG_J_5f;TG produits entretien voiture;MAGASIN
+MAG_J_5g;Tuy arrosage moto pompe;MAGASIN
+MAG_J_6d;Acc arrosage;MAGASIN
+MAG_J_6f;TG Tuyau au m;MAGASIN
+MAG_J_6g;Pulverisateur - produit anti nuisible;MAGASIN
+MAG_J_6g_V;PESON ;MAGASIN
+MAG_J_7d;Camping gaz - BBQ - Couteaux;MAGASIN
+MAG_J_7d_V;COUTEAU BOUCHERIE;MAGASIN
+MAG_J_7f;TG outillage main jardin;MAGASIN
+MAG_J_7g;Sabre manche sécateur;MAGASIN
+MAG_J_8d;Jouet enfant coupe;MAGASIN
+MAG_J_8f;TG barre mine;MAGASIN
+MAG_J_8g;Fourche rateau;MAGASIN
+MAG_J_9;TG désherbant;MAGASIN
+MAG_J_9d;Pelle;MAGASIN
+MAG_J_9g;Pot phyto  bidime;MAGASIN
+MAG_L_1;caisse a outil ;MAGASIN
+MAG_L_10d;grille ventilation;MAGASIN
+MAG_L_10g;organiseur;MAGASIN
+MAG_L_10TG;TG grille;MAGASIN
+MAG_L_11d;Extracteur;MAGASIN
+MAG_L_11g;grille ventilation;MAGASIN
+MAG_L_12;malle ventilo;MAGASIN
+MAG_L_13;etagere;MAGASIN
+MAG_L_14;rangement ;MAGASIN
+MAG_L_2;liege bac a bec ;MAGASIN
+MAG_L_3;Boite lettre;MAGASIN
+MAG_L_4d;rangement - boite a clef;MAGASIN
+MAG_L_4d_V;BOITE A CLE;MAGASIN
+MAG_L_4g;tapis;MAGASIN
+MAG_L_5d;signaletique;MAGASIN
+MAG_L_5g;sechoir et affichage;MAGASIN
+MAG_L_6;treteau;MAGASIN
+MAG_L_7;Joint;MAGASIN
+MAG_L_8;caisse outil;MAGASIN
+MAG_L_9;cantine;MAGASIN
+Non_bipe;Non Bipé;ANNEXE

@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { BASE_URL } from "./constants.js";
 
 // Tags pour le cache de l'API principale (à adapter selon vos besoins)
-const tagTypes = ["User", "Article"];
+const tagTypes = ["User", "Article", "Zone"];
 
 // Configuration de la requête de base pour l'API principale
 const baseQuery = fetchBaseQuery({
@@ -16,7 +16,6 @@ const baseQuery = fetchBaseQuery({
   },
 });
 
-
 // API principale pour les produits, utilisateurs, etc.
 export const apiSlice = createApi({
   reducerPath: "api",
@@ -24,4 +23,3 @@ export const apiSlice = createApi({
   tagTypes,
   endpoints: (builder) => ({}), // Endpoints spécifiques à l'API principale
 });
-

@@ -20,6 +20,8 @@ import ArticlePage from "./screens/users/ArticlePage";
 import SearchByGencode from "./screens/users/SearchByGencode";
 import SearchByNart from "./screens/users/SearchByNart";
 import ArticleCommandeDetails from "./screens/users/ArticleCommandeDetails";
+import ZonePage from "./screens/users/ZonePage";
+import ZonesScreen from "./screens/users/ZonesScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -37,6 +39,8 @@ const router = createBrowserRouter(
           path="commande/article/:nart"
           element={<ArticleCommandeDetails />}
         />
+        <Route path="zones" element={<ZonePage />} />
+        <Route path="zones/listes" element={<ZonesScreen />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Route>

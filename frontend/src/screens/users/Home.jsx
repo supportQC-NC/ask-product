@@ -24,6 +24,8 @@ const Home = () => {
       navigate("/user/gencode/search");
     } else if (e.key === "2") {
       navigate("/user/nart/search");
+    } else if (e.key === "3") {
+      navigate("/user/zones/listes");
     }
   };
 
@@ -47,6 +49,9 @@ const Home = () => {
         </button>
         <button className="btn" onClick={() => navigate("/user/nart/search")}>
           Recherche par Nart (2)
+        </button>
+        <button className="btn" onClick={() => navigate("/user/zones/listes")}>
+          Zones (3)
         </button>
       </div>
     </div>
