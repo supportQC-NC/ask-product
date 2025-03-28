@@ -5,15 +5,8 @@ import connectDB from "./config/db.js";
 //  ============= MODELS =============
 import User from "./models/userModel.js";
 
-
-
 //  ============= DATA =============
 import users from "./_data/users.js";
-
-
-
-
-
 
 dotenv.config();
 
@@ -23,17 +16,9 @@ const importData = async () => {
   try {
     // Suppression des données existantes
     await User.deleteMany();
-  
-
-
 
     // Insertion des utilisateurs
     await User.insertMany(users);
-
-
-
-  
-
 
     console.log("Data Imported!".green.inverse);
     process.exit();
@@ -45,9 +30,7 @@ const importData = async () => {
 
 const destroyData = async () => {
   try {
-  
     await User.deleteMany();
- 
 
     console.log("Data Destroyed!".red.inverse);
     process.exit();
