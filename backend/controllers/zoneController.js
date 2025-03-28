@@ -62,9 +62,6 @@ const upload = multer({ dest: "./uploads/" });
 //       .json({ message: "Erreur lors de la récupération des zones." });
 //   }
 // });
-// @desc    Get all zones
-// @route   GET /api/zones
-// @access  Public
 const getZones = asyncHandler(async (req, res) => {
   try {
     const zones = await Zone.find();
@@ -76,6 +73,7 @@ const getZones = asyncHandler(async (req, res) => {
       .json({ message: "Erreur lors de la récupération des zones." });
   }
 });
+
 // @desc    Get zone by ID
 // @route   GET /api/zones/:id
 // @access  Public
@@ -124,10 +122,10 @@ const importZonesFromCSV = asyncHandler(async (req, res) => {
     if (!req.file) {
       res.status(400).json({ message: "Veuillez fournir un fichier CSV." });
     } else {
-      const file = req.file;
+      const csvFile = req.file;
       const zones = [];
 
-      fs.createReadStream(file.path)
+      fs.createReadStream(csvFile.path)
         .pipe(csv({ separator: ";" }))
         .on("data", (row) => {
           zones.push({
@@ -146,6 +144,12 @@ const importZonesFromCSV = asyncHandler(async (req, res) => {
               .status(500)
               .json({ message: "Erreur lors de l'importation des zones." });
           }
+        })
+        .on("error", (error) => {
+          console.error(error);
+          res
+            .status(500)
+            .json({ message: "Erreur lors de l'importation des zones." });
         });
     }
   } catch (error) {
