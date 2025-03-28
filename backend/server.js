@@ -50,7 +50,7 @@ if (process.env.NODE_ENV === "development") {
 
 // Configuration des fichiers statiques
 app.use("/doc", express.static(path.join(__dirname, "doc")));
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 // Configuration CORS
 app.use(
