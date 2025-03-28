@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import "./articlePage.css";
 import StockCard from "../../components/articlePage/StockCard";
 import Loader from "../../components/loader/Loader";
+import { useGetFournisseursByFournQuery } from "../../slices/fournisseurSlice";
 
 const ArticlePage = () => {
   const { gencode } = useParams();
@@ -12,6 +13,7 @@ const ArticlePage = () => {
   const [imageSrc, setImageSrc] = useState(null);
   const [pdfFile, setPdfFile] = useState("");
   const [loader, setLoader] = useState(true);
+  const [isArticleAvailable, setIsArticleAvailable] = useState(false);
 
   useEffect(() => {
     if (gencode) {
@@ -23,6 +25,7 @@ const ArticlePage = () => {
         })
         .then((data) => {
           setArticle(data);
+          setIsArticleAvailable(true); // Set article as available
         })
         .catch((err) => {
           setError(err.message);
@@ -106,6 +109,9 @@ const ArticlePage = () => {
       maximumFractionDigits: 0,
     }).format(price);
   };
+
+  const { data: fournisseurData, error: fournisseurError } =
+    useGetFournisseursByFournQuery(isArticleAvailable ? article.FOURN : "");
 
   return (
     <div className="article-page">
@@ -265,6 +271,14 @@ const ArticlePage = () => {
                   <span className="field-label">Ref Fournisseur:</span>
                   <span className="field-value">{article.REFER ?? "-"}</span>
                 </div>
+                <div className="field-row">
+                  <span className="field-label">Nom Fournisseur:</span>
+                  <span className="field-value">
+                    {fournisseurData && fournisseurData.length > 0
+                      ? fournisseurData[0].NOM
+                      : "Fournisseur inconnu"}
+                  </span>
+                </div>
               </div>
               <div className="observation">
                 <h3 className="observation-title">Observation</h3>
@@ -299,6 +313,7 @@ const ArticlePage = () => {
         </>
       )}
       {error && <p className="error">{error}</p>}
+      {fournisseurError && <p className="error">{fournisseurError.message}</p>}
       <button onClick={handleRescan} className="rescan-button">
         Re-scanner un article
       </button>

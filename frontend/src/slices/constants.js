@@ -6,3 +6,4 @@ export const BASE_URL =
 export const USERS_URL = `${BASE_URL}/users`;
 export const ARTICLES_URL = `${BASE_URL}/api/articles`;
 export const ZONES_URL = `${BASE_URL}/api/zones`;
+export const FOURNISSEURS_URL = `${BASE_URL}/api/fournisseurs`;

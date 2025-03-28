@@ -1,4 +1,3 @@
-
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./index.css"; // Assurez-vous que ce chemin est correct
@@ -7,21 +6,16 @@ import ScrollToTop from "./components/utils/ScrollToTop";
 import { Outlet } from "react-router-dom";
 
 const App = () => {
-
-
   return (
-
-   
+    <div>
+      <ScrollToTop />
       <div>
-        <ScrollToTop />
         <div>
-          <div>
-            <Outlet />
-          </div>
+          <Outlet />
         </div>
-        <ToastContainer />
       </div>
-
+      <ToastContainer />
+    </div>
   );
 };
 
